@@ -4,16 +4,18 @@
   "description": "Demonstration of a JavaScript Model-View-Controller project.",
   "main": "start.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "nodemon ./start.js --ignore public/",
+    "css":
+      "postcss -u postcss-custom-properties postcss-import autoprefixer cssnano -d public/dist/ public/src/mvc-demo.css --no-map --watch",
+    "start":
+      "concurrently \"npm run watch\" \"npm run css\" --names \"😈,🛠\" --prefix name"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/brianzelip/mvc-demo.git"
   },
-  "keywords": [
-    "mvc",
-    "jrWebDev"
-  ],
+  "keywords": ["mvc", "jrWebDev"],
   "author": "Brian Zelip, @bzelip",
   "license": "MIT",
   "bugs": {
