@@ -1,0 +1,39 @@
+/*! 
+  mvc-demo.css
+  by @bzelip & Basscss
+*/
+
+@import './basscss@7.1.1.css';
+
+/*!
+Box Sizing via http://tachyons.io/docs/layout/box-sizing/
+*/
+html,
+body,
+div,
+article,
+section,
+main,
+footer,
+header,
+form,
+fieldset,
+pre,
+code,
+p,
+ul,
+ol,
+li,
+dl,
+dt,
+dd,
+textarea,
+input[type='email'],
+input[type='number'],
+input[type='password'],
+input[type='tel'],
+input[type='text'],
+input[type='url'],
+.border-box {
+  box-sizing: border-box;
+}
