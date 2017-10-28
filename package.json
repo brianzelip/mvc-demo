@@ -19,5 +19,12 @@
   "bugs": {
     "url": "https://github.com/brianzelip/mvc-demo/issues"
   },
-  "homepage": "https://github.com/brianzelip/mvc-demo#readme"
+  "homepage": "https://github.com/brianzelip/mvc-demo#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "dotenv": "^4.0.0",
+    "express": "^4.16.2",
+    "mongoose": "^4.12.4",
+    "pug": "^2.0.0-rc.4"
+  }
 }
