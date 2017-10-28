@@ -19,7 +19,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // // After allllll that above middleware, we finally handle our own routes!
-// app.use('/', routes);
+app.use('/', routes);
 
 // // If that above routes didnt work, we 404 them and forward to error handler
 // app.use(errorHandlers.notFound);
