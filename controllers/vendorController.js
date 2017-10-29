@@ -3,5 +3,5 @@ exports.homePage = (req, res) => {
 };
 
 exports.addVendor = (req, res) => {
-  res.render('addVendor');
+  res.render('addVendor', { title: 'Add vendor' });
 };
