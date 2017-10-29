@@ -1,4 +1,16 @@
 extends layout
 
 block content
-  section
+  section.mt3
+    .col-7.mx-auto
+      h1= title
+      form.p3.bg-white.shadow(action="/addVendor" method="POST")
+        .mb2
+          label(for="name") Name
+          input.block.col-12(type="text" name="name")
+        .mb2
+          label(for="url") Url
+          input.block.col-12(type="text" name="url")
+        .mb2
+          label(for="description") Description
+          textarea(name="description" rows="3").block.col-12
