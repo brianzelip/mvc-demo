@@ -38,6 +38,11 @@ input[type='url'],
   box-sizing: border-box;
 }
 
+/* Custom properties */
+:root {
+  --black: rgb(30, 30, 30);
+}
+
 /* Base */
 html,
 body,
@@ -46,6 +51,9 @@ body,
 }
 
 /* Typography */
+body {
+  color: var(--black);
+}
 body,
 h1,
 h2,
@@ -95,4 +103,19 @@ h6 {
 
 .hover-no-decoration:hover {
   text-decoration: none;
+}
+
+/*  background colors */
+.bg-black {
+  background-color: var(--black);
+}
+.bg-light-gray {
+  background-color: #efefef;
+}
+
+textarea {
+  border: 1px solid rgba(0, 0, 0, 0.125);
+}
+.shadow {
+  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.15);
 }
