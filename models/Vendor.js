@@ -9,10 +9,10 @@ const vendorSchema = new mongoose.Schema(
       trim: true,
       required: 'You must enter a vendor name!'
     },
-    vendorType: {
-      type: String,
-      required: 'You must select a vendor type!'
-    },
+    // vendorType: {
+    //   type: String,
+    //   required: 'You must select a vendor type!'
+    // },
     vendorUrl: {
       type: String,
       trim: true
