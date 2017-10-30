@@ -6,12 +6,12 @@ block content
       h1= title
       form.p3.bg-white.shadow(action="/addVendor" method="POST")
         .mb2
-          label(for="name") Name
-          input.block.col-12(type="text" name="name")
+          label(for="vendorName") Name
+          input.block.col-12(type="text" name="vendorName")
         .mb2
-          label(for="url") Url
-          input.block.col-12(type="text" name="url")
+          label(for="vendorUrl") Url
+          input.block.col-12(type="text" name="vendorUrl")
         .mb2
-          label(for="description") Description
-          textarea(name="description" rows="3").block.col-12
+          label(for="vendorDescription") Description
+          textarea(name="vendorDescription" rows="3").block.col-12
         input.btn.btn-primary.col-12.mt2(type="submit" value="Add vendor →")
