@@ -12,14 +12,38 @@ mixin addVendorForm(vendor = {})
       textarea.block.col-12(name="vendorDescription" rows="3")
     .mb2
       label(for="etsyUrl") Etsy handle
-      input.block.col-12(type="text" name="etsyUrl")
+      .col-12.flex.flex-center.mb2
+        .bg-light-gray.self-stretch.flex.flex-center.border-top.border-bottom.border-left.px1
+          i.black.fa.fa-fw.fa-etsy
+        input.flex-auto(type="text")
+      .col-12.relative
+        i.absolute.gray.fa.fa-fw.fa-etsy(style="height: 2.25rem; line-height: 2.1rem;left: .5rem;")
+        input.block.col-12(type="text" name="etsyUrl" style="padding-left: 2rem;")
     .mb2
       label(for="fbUrl") Facebook handle
-      input.block.col-12(type="text" name="fbUrl")
+      .col-12.flex.flex-center.mb2
+        .bg-light-gray.self-stretch.flex.flex-center.border-top.border-bottom.border-left.px1
+          i.black.fa.fa-fw.fa-facebook
+        input.flex-auto(type="text")
+      .col-12.relative
+        i.absolute.gray.fa.fa-fw.fa-facebook(style="height: 2.25rem; line-height: 2.1rem;left: .5rem;")
+        input.block.col-12(type="text" name="fbUrl" style="padding-left: 2rem;")
     .mb2
       label(for="instagramUrl") Instagram handle
-      input.block.col-12(type="text" name="instagramUrl")
+      .col-12.flex.flex-center.mb2
+        .bg-light-gray.self-stretch.flex.flex-center.border-top.border-bottom.border-left.px1
+          i.black.fa.fa-fw.fa-instagram
+        input.flex-auto(type="text")
+      .col-12.relative
+        i.absolute.gray.fa.fa-fw.fa-instagram(style="height: 2.25rem; line-height: 2.1rem;left: .5rem;")
+        input.block.col-12(type="text" name="instagramUrl" style="padding-left: 2rem;")
     .mb2
       label(for="twitterUrl") Twitter handle
-      input.block.col-12(type="text" name="twitterUrl")
+      .col-12.flex.flex-center.mb2
+        .bg-light-gray.self-stretch.flex.flex-center.border-top.border-bottom.border-left.px1
+          i.black.fa.fa-fw.fa-twitter
+        input.flex-auto(type="text")
+      .col-12.relative
+        i.absolute.gray.fa.fa-fw.fa-twitter(style="height: 2.25rem; line-height: 2.1rem;left: .5rem;")
+        input.block.col-12(type="text" name="twitterUrl" style="padding-left: 2rem;")
     input.btn.btn-primary.col-12.mt2(type="submit" value="Add vendor →")
