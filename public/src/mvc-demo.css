@@ -1,8 +1,9 @@
 /*! 
   mvc-demo.css
-  by @bzelip & Basscss
+  by @bzelip, Basscss, and Font Awesome
 */
 
+@import './font-awesome@4.7.0.css';
 @import './basscss@7.1.1.css';
 
 /*!
