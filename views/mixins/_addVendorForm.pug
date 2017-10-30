@@ -1,0 +1,25 @@
+mixin addVendorForm(vendor = {})
+
+  form.p3.bg-white.shadow(action="/add" method="POST")
+    .mb2
+      label(for="vendorName") Company name
+      input.block.col-12(type="text" name="vendorName")
+    .mb2
+      label(for="vendorUrl") Company website address
+      input.block.col-12(type="text" name="vendorUrl")
+    .mb2
+      label(for="vendorDescription") Description of company
+      textarea.block.col-12(name="vendorDescription" rows="3")
+    .mb2
+      label(for="etsyUrl") Etsy shop name
+      input.block.col-12(type="text" name="etsyUrl")
+    .mb2
+      label(for="fbUrl") Facebook handle
+      input.block.col-12(type="text" name="fbUrl")
+    .mb2
+      label(for="instagramUrl") Instagram handle
+      input.block.col-12(type="text" name="instagramUrl")
+    .mb2
+      label(for="twitterUrl") Twitter handle
+      input.block.col-12(type="text" name="twitterUrl")
+    input.btn.btn-primary.col-12.mt2(type="submit" value="Add vendor →")
