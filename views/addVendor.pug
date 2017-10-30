@@ -1,7 +1,7 @@
 extends layout
 
 block content
-  section.mt3
+  section.mt3.mb3
     .col-7.mx-auto
       h1= title
       form.p3.bg-white.shadow(action="/addVendor" method="POST")
@@ -13,5 +13,17 @@ block content
           input.block.col-12(type="text" name="vendorUrl")
         .mb2
           label(for="vendorDescription") Description
-          textarea(name="vendorDescription" rows="3").block.col-12
+          textarea.block.col-12(name="vendorDescription" rows="3")
+        .mb2
+          label(for="etsyUrl") Etsy URL
+          input.block.col-12(type="text" name="etsyUrl")
+        .mb2
+          label(for="fbUrl") Facebook URL
+          input.block.col-12(type="text" name="fbUrl")
+        .mb2
+          label(for="instagramUrl") Instagram URL
+          input.block.col-12(type="text" name="instagramUrl")
+        .mb2
+          label(for="twitterUrl") Twitter URL
+          input.block.col-12(type="text" name="twitterUrl")
         input.btn.btn-primary.col-12.mt2(type="submit" value="Add vendor →")
