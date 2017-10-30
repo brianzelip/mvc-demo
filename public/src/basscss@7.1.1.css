@@ -1113,7 +1113,3 @@ hr {
 .bg-lighten-4 {
   background-color: hsla(0, 0%, 100%, 0.5);
 }
-
-.self-stretch {
-  align-self: stretch;
-}
