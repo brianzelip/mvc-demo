@@ -1,3 +1,6 @@
+const mongoose = require('mongoose');
+const Vendor = mongoose.model('Vendor');
+
 exports.homePage = (req, res) => {
   res.render('layout');
 };
