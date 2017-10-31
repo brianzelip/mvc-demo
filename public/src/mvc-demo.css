@@ -115,9 +115,6 @@ h6 {
   background-color: #efefef;
 }
 
-textarea {
-  border: 1px solid rgb(204, 204, 204);
-}
 .shadow {
   box-shadow: 0 1px 10px rgba(0, 0, 0, 0.15);
 }
@@ -143,27 +140,26 @@ input[type='week'] {
   padding: 0.25rem;
 }
 
-.self-stretch {
-  align-self: stretch;
+.border,
+.field {
+  border: 1px solid rgb(204, 204, 204);
+}
+.field {
+  border-radius: 0;
 }
 
-.focus-border-none:focus {
-  border: none;
-}
-
-.focus-border:focus {
-  border: 1px solid blue;
-}
-
+/* icon + <input> group - two alternate components below
+ *  1. flex-based component
+ *  2. position: absolute -based component
+ */
+/* flex-based */
 .input-group-flex {
   width: 100%;
   display: flex;
   align-items: center;
   margin-bottom: 1rem;
-  border: 1px solid rgb(204, 204, 204);
   box-sizing: border-box;
 }
-
 .input-group-flex__icon-wrapper {
   background-color: var(--light-gray);
   align-self: stretch;
@@ -173,31 +169,27 @@ input[type='week'] {
   padding-left: 0.5rem;
   border-right: 1px solid rgb(204, 204, 204);
 }
-
 .input-group-flex__input {
   flex: 1 1 auto;
   border: none;
 }
-
 .input-group-flex__input:focus {
   border: none;
 }
 
+/* position-based */
 .input-group-position {
   width: 100%;
   position: relative;
-  border: 1px solid rgb(204, 204, 204);
 }
 .input-group-position__icon {
   position: absolute;
   color: #aaa;
-  height: 2.25rem;
-  line-height: 2.1rem;
+  line-height: 2.25rem;
   left: 0.5rem;
 }
 input[type='text'].input-group-position__input {
   display: block;
   width: 100%;
-  border: none;
   padding-left: 2.25rem;
 }
