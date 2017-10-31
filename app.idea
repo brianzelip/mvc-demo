@@ -41,3 +41,21 @@ app could be:
   - breweries
   - restaurants
   - coffee shops for remote working
+
+
+If going with Bmore Goods:
+vendor types:
+- wood
+- jewelry
+- bags
+- art
+- pottery
+- music
+- photography
+- 
+
+** YIKES! - this quickly gets too out of hand. I wonder if there's a taxonomy for vendor types, craft/artisan/product maker types? Elsewise, other ways to approach categorizing:
+
+- allow the user to input up to three tags
+  - this set would then be filterable? reminds me of word tags though, the problem is there wouldn't be enough consistency.
+
