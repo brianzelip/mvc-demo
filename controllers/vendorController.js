@@ -17,6 +17,7 @@ exports.createVendor = async (req, res) => {
   res.redirect('/');
 };
 
-exports.getVendors = (req, res) => {
-  res.render('vendors', { title: 'Vendors' });
+exports.getVendors = async (req, res) => {
+  const vendors = await Vendor.find();
+  res.render('vendors', { title: 'Vendors', vendors });
 };
