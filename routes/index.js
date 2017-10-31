@@ -3,7 +3,7 @@ const router = express.Router();
 const vendorController = require('../controllers/vendorController');
 const { catchErrors } = require('../handlers/errorHandlers');
 
-router.get('/', vendorController.homePage);
+router.get('/', vendorController.getVendors);
 router.get('/add', vendorController.addVendor);
 router.post('/add', catchErrors(vendorController.createVendor));
 
