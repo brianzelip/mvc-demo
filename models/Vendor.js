@@ -22,7 +22,7 @@ const vendorSchema = new mongoose.Schema(
       type: String,
       trim: true
     },
-    fbUrl: {
+    facebookUrl: {
       type: String,
       trim: true
     },
@@ -31,10 +31,6 @@ const vendorSchema = new mongoose.Schema(
       trim: true
     },
     etsyUrl: {
-      type: String,
-      trim: true
-    },
-    pinterestUrl: {
       type: String,
       trim: true
     }
