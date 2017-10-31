@@ -16,3 +16,7 @@ exports.createVendor = async (req, res) => {
   // req.flash('success', 'Vendor saved successfully!');
   res.redirect('/');
 };
+
+exports.getVendors = (req, res) => {
+  res.render('vendors', { title: 'Vendors' });
+};
