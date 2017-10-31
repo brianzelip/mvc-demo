@@ -3,47 +3,22 @@ mixin addVendorForm(vendor = {})
   form.p3.bg-white.shadow(action="/add" method="POST")
     .mb2
       label(for="vendorName") Company name
-      input.block.col-12(type="text" name="vendorName")
+      input.block.col-12.field(type="text" name="vendorName")
     .mb2
       label(for="vendorUrl") Company website address
-      input.block.col-12(type="text" name="vendorUrl")
+      input.block.col-12.field(type="text" name="vendorUrl")
     .mb2
       label(for="vendorDescription") Description of company
-      textarea.block.col-12(name="vendorDescription" rows="3")
-    .mb2
-      label(for="etsyUrl") Etsy handle
-      .input-group-flex
-        .input-group-flex__icon-wrapper
-          i.black.fa.fa-fw.fa-etsy
-        input.input-group-flex__input(type="text")
-      .input-group-position
-        i.input-group-position__icon.fa.fa-fw.fa-etsy
-        input.input-group-position__input(type="text" name="etsyUrl")
-    .mb2
-      label(for="fbUrl") Facebook handle
-      .input-group-flex
-        .input-group-flex__icon-wrapper
-          i.black.fa.fa-fw.fa-facebook
-        input.input-group-flex__input(type="text")
-      .input-group-position
-        i.input-group-position__icon.fa.fa-fw.fa-facebook
-        input.input-group-position__input(type="text" name="fbUrl")
-    .mb2
-      label(for="instagramUrl") Instagram handle
-      .input-group-flex
-        .input-group-flex__icon-wrapper
-          i.black.fa.fa-fw.fa-instagram
-        input.input-group-flex__input(type="text")
-      .input-group-position
-        i.input-group-position__icon.fa.fa-fw.fa-instagram
-        input.input-group-position__input(type="text" name="instagramUrl")
-    .mb2
-      label(for="twitterUrl") Twitter handle
-      .input-group-flex
-        .input-group-flex__icon-wrapper
-          i.black.fa.fa-fw.fa-twitter
-        input.input-group-flex__input(type="text")
-      .input-group-position
-        i.input-group-position__icon.fa.fa-fw.fa-twitter
-        input.input-group-position__input(type="text" name="twitterUrl")
+      textarea.block.col-12.field(name="vendorDescription")
+    - const socials = ['Etsy', 'Facebook', 'Instagram', 'Twitter']
+    each social in socials
+      .mb2
+        label(for=`${social.toLowerCase()}Url`)= `${social} address`
+        //- .input-group-flex
+        //-   .input-group-flex__icon-wrapper
+        //-     i.black.fa.fa-fw(class=`fa-${social.toLowerCase()}`)
+        //-   input.input-group-flex__input(type="text")
+        .input-group-position
+          i.input-group-position__icon.fa.fa-fw(class=`fa-${social.toLowerCase()}`)
+          input.input-group-position__input.field(type="text" name=`${social.toLowerCase()}Url`)
     input.btn.btn-primary.col-12.mt2(type="submit" value="Add vendor →")
