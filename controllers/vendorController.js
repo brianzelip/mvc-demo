@@ -6,7 +6,7 @@ exports.homePage = (req, res) => {
 };
 
 exports.addVendor = (req, res) => {
-  res.render('addVendor', { title: 'Add vendor' });
+  res.render('editVendor', { title: 'Add vendor' });
 };
 
 exports.createVendor = async (req, res) => {
