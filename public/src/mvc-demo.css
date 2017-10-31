@@ -193,3 +193,16 @@ input[type='text'].input-group-position__input {
   width: 100%;
   padding-left: 2.25rem;
 }
+
+@media (min-width: 40em) {
+  .sm-mr3 {
+    margin-right: 2rem;
+  }
+}
+
+/* flexbox */
+@media (min-width: 40em) {
+  .sm-flex-row {
+    flex-direction: row;
+  }
+}
