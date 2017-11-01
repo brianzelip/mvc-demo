@@ -6,16 +6,17 @@
   "scripts": {
     "test": "nyc ava --verbose",
     "watch": "nodemon ./start.js --ignore public/",
-    "css":
-      "postcss -u postcss-custom-properties postcss-import autoprefixer cssnano -d public/dist/ public/src/mvc-demo.css --no-map --watch",
-    "start":
-      "concurrently \"npm run watch\" \"npm run css\" --names \"💻,🛠\" --prefix name"
+    "css": "postcss -u postcss-custom-properties postcss-import autoprefixer cssnano -d public/dist/ public/src/mvc-demo.css --no-map --watch",
+    "start": "concurrently \"npm run watch\" \"npm run css\" --names \"💻,🛠\" --prefix name"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/brianzelip/mvc-demo.git"
   },
-  "keywords": ["mvc", "jrWebDev"],
+  "keywords": [
+    "mvc",
+    "jrWebDev"
+  ],
   "author": "Brian Zelip, @bzelip",
   "license": "MIT",
   "bugs": {
@@ -32,6 +33,8 @@
   "devDependencies": {
     "autoprefixer": "^7.1.6",
     "ava": "^0.23.0",
+    "axios": "^0.17.0",
+    "cheerio": "^1.0.0-rc.2",
     "concurrently": "^3.5.0",
     "cssnano": "^3.10.0",
     "nodemon": "^1.12.1",
