@@ -206,3 +206,16 @@ input[type='text'].input-group-position__input {
     flex-direction: row;
   }
 }
+
+.hover-bg:hover {
+  background-color: white;
+  color: var(--black);
+}
+
+.align-stretch {
+  align-items: stretch;
+}
+
+.self-stretch {
+  align-self: stretch;
+}
