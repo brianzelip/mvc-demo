@@ -5,12 +5,12 @@ const { vendorUrls } = require('./vendorUrls');
 // vendorUrls scraped by hand from
 // http://madeinbaltimore.org/business-directory/
 
-getVendorProfiles = async url => {
-  console.log(url);
-  const response = await axios.get(url);
-  const html = await cheerio.load(response.data);
-  return await html;
-};
+// getVendorProfiles = async url => {
+//   console.log(url);
+//   const response = await axios.get(url);
+//   const html = await cheerio.load(response.data);
+//   return await html;
+// };
 
 const getVendorProfile = url => {
   axios
@@ -35,7 +35,7 @@ const getProfile = async function(url) {
   return title;
 };
 
-console.log(getProfile(vendorUrls[2]));
+console.log(vendorUrls[2]);
 
 // vendorUrls.forEach(url => {
 //   getVendorProfile(url);
