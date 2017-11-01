@@ -14,7 +14,7 @@ exports.createVendor = async (req, res) => {
   const vendor = new Vendor(req.body);
   await vendor.save();
   // req.flash('success', 'Vendor saved successfully!');
-  res.redirect('/');
+  res.redirect('/add');
 };
 
 exports.getVendors = async (req, res) => {
