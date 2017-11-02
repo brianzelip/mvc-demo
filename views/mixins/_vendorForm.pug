@@ -1,6 +1,6 @@
 mixin vendorForm(vendor = {})
 
-  form.p3.bg-white.shadow(action="/add" method="POST")
+  form.p3.bg-white.shadow(action=`/add/${vendor._id || ''}` method="POST")
     .flex.flex-column.sm-flex-row
       .col-12.sm-col-6.sm-mr3
         .mb2
@@ -24,4 +24,4 @@ mixin vendorForm(vendor = {})
             .input-group-position
               i.input-group-position__icon.fa.fa-fw(class=`fa-${social.toLowerCase()}`)
               input.input-group-position__input.field(type="text" name=`${social.toLowerCase()}Url` value=(vendor[`${social.toLowerCase()}Url`] || ''))
-    input.btn.btn-primary.col-12.mt2(type="submit" value="Add vendor →")
+    input.btn.btn-primary.col-12.mt2(type="submit" value="Save →")
