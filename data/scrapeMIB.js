@@ -1,46 +1,25 @@
 const axios = require('axios');
 const cheerio = require('cheerio');
 const { vendorUrls } = require('./vendorUrls.js');
+const fs = require('fs');
 
-// vendorUrls scraped by hand from
-// http://madeinbaltimore.org/business-directory/
-
-getVendorProfiles = async url => {
-  console.log(url);
-  const response = await axios.get(url);
-  const html = await cheerio.load(response.data);
-  return await html;
-};
-
-const getVendorProfile = url => {
+// 1. Input a MIB vendor URL,
+//    output the vendor summary appended to a file.
+const getVendorData = function(url) {
   axios
     .get(url)
     .then(response => {
-      const html = cheerio.load(response.data);
-      console.log('here goes CHEERIO!', html);
+      const $ = cheerio.load(response.data);
+      return $('.wcpv-vendor-profile.entry-summary').html();
     })
-    .catch(error => {
-      console.log(error);
-    });
+    .then(response => fs.appendFile('vendorSummaries.html', response));
 };
 
-const getProfile = async function(url) {
-  try {
-    const response = await axios.get(url);
-    const html = await cheerio.load(response.data);
-    console.log(html);
-  } catch (e) {
-    console.log(e);
-  }
-  return title;
-};
-
-console.log(getProfile(vendorUrls[2]));
-
-// vendorUrls.forEach(url => {
-//   getVendorProfile(url);
-// });
-
-// 1. load a MIB vendor URL
-// 2. find ('.wcpv-vendor-profile.entry-summary') and copy all of its childNodes
-// 3. extract out any URLs and <p> contents
+// 2. Get all the vendors
+//    In practice though, i had to edit the array file to only serve up 10 urls
+//    during a map at once, any more than 10, at least when I tried 13,
+//    only a portion returned. When there were max 10 urls in the array,
+//    it always worked.
+vendorUrls.map(url => {
+  getVendorData(url);
+});
