@@ -6,5 +6,5 @@ block content
       h1= title
       ol
         each vendor in vendors
-          li.p2 #{vendor.vendorName} | 
+          li #{vendor.vendorName} | 
             a(href=`/vendor/${vendor._id}/edit`) Edit vendor
