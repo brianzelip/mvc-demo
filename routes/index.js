@@ -7,5 +7,5 @@ router.get('/', catchErrors(vendorController.getVendors));
 router.get('/vendors', catchErrors(vendorController.getVendors));
 router.get('/add', vendorController.addVendor);
 router.post('/add', catchErrors(vendorController.createVendor));
-
+router.get('/vendor/:id/edit', catchErrors(vendorController.editVendor));
 module.exports = router;
