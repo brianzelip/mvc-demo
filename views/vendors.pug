@@ -4,3 +4,7 @@ block content
   section.mt3.mb3
     .col-11.md-col-10.lg-col-8.mx-auto
       h1= title
+      ol
+        each vendor in vendors
+          li.p2 #{vendor.vendorName} | 
+            a(href=`/vendor/${vendor._id}/edit`) Edit vendor
