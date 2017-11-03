@@ -4,6 +4,7 @@ const path = require('path');
 const bodyParser = require('body-parser');
 const routes = require('./routes/index');
 const errorHandlers = require('./handlers/errorHandlers');
+const flash = require('connect-flash');
 
 // create our Express app
 const app = express();
