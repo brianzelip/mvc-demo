@@ -20,6 +20,18 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
+// // The flash middleware let's us use req.flash('error', 'Shit!'), which will then pass that message to the next page the user requests
+app.use(flash());
+
+// pass variables to our templates + all requests
+app.use((req, res, next) => {
+  // res.locals.h = helpers;
+  res.locals.flashes = req.flash();
+  // res.locals.user = req.user || null;
+  // res.locals.currentPath = req.path;
+  next();
+});
+
 // // After allllll that above middleware, we finally handle our own routes!
 app.use('/', routes);
 
