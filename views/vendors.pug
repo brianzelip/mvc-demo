@@ -4,7 +4,10 @@ block content
   section.mt3.mb3
     .container
       h1= title
-      ol
+      ol.list-reset.flex.flex-wrap.mxn2
         each vendor in vendors
-          li #{vendor.vendorName} | 
-            a(href=`/vendors/${vendor._id}/edit`) Edit
+          li.mb3.px2.col-4
+            div.p2.bg-white.shadow
+              p.h1
+                a(href=`/vendors/${vendor.slug}`) #{vendor.vendorName}
+              a.block(href=`/vendors/${vendor._id}/edit`) Edit
