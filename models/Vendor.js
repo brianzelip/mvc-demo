@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 // have to tell mongoose that we're using ES6 async/await
 mongoose.Promise = global.Promise;
+const slug = require('slugs');
 
 const vendorSchema = new mongoose.Schema(
   {
@@ -33,7 +34,8 @@ const vendorSchema = new mongoose.Schema(
     etsyUrl: {
       type: String,
       trim: true
-    }
+    },
+    slug: String
   },
   {
     timestamps: true
