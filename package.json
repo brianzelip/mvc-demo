@@ -44,6 +44,7 @@
     "nyc": "^11.2.1",
     "postcss": "^6.0.13",
     "postcss-cli": "^4.1.1",
+    "postcss-color-function": "^4.0.1",
     "postcss-custom-properties": "^6.2.0",
     "postcss-import": "^11.0.0"
   }
