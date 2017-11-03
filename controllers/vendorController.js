@@ -45,7 +45,7 @@ exports.updateVendor = async (req, res) => {
   ).exec(); //tells mongoose explicitly to run this query
   req.flash(
     'success',
-    `Successfully updated <strong>${vendor.vendorName}</strong>!`
+    `Successfully updated <strong>${vendor.vendorName}</strong>! <a href="/vendors/${vendor.slug}">Go to ${vendor.vendorName} →</a>`
   );
   res.redirect(`/vendors/${vendor.id}/edit`);
   // 2. Redirect them to the vendor and flash them it worked
