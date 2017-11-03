@@ -43,10 +43,10 @@ exports.updateVendor = async (req, res) => {
       // this option will run the validator to catch that problem (plus the trims)
     }
   ).exec(); //tells mongoose explicitly to run this query
-  // req.flash(
-  //   'success',
-  //   `Successfully updated <strong>${vendor.name}</strong>! <a href="/vendors/${vendor.slug}">View vendor →</a>`
-  // );
+  req.flash(
+    'success',
+    `Successfully updated <strong>${vendor.name}</strong>! <a href="/">Go Home →</a>`
+  );
   res.redirect(`/vendors/${vendor.id}/edit`);
   // 2. Redirect them to the vendor and flash them it worked
 };
