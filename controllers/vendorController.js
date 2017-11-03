@@ -50,3 +50,8 @@ exports.updateVendor = async (req, res) => {
   res.redirect(`/vendors/${vendor.id}/edit`);
   // 2. Redirect them to the vendor and flash them it worked
 };
+
+exports.getVendor = async (req, res) => {
+  const vendor = await Vendor.findOne({ slug: req.params.slug });
+  res.render('vendor', { title: `${vendor.vendorName}`, vendor });
+};
