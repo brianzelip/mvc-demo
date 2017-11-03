@@ -42,10 +42,18 @@ const vendorSchema = new mongoose.Schema(
   }
 );
 
-// vendorSchema.pre('save', function(next) {
-//   this.timeStamp = Date.now();
-//   next();
-// }); // needs to be a long-form function because we need `this`, so arrow func won't do
-// keeping this function around to show my future self how to insert a pre('save')
+vendorSchema.pre('save', function(next) {
+  if (!this.isModified('vendorName')) {
+    next(); // skip it
+    return; // stop this function from running
+    // the above two lines could also be written as:
+    // `return next();`.
+    //
+    // also, `isModified()` is a Mongoose method
+  }
+  this.slug = slug(this.vendorName);
+  // TODO make this more resilient so slugs are unique
+  next();
+}); // needs to be a long-form function because we need `this`, so arrow func won't do
 
 module.exports = mongoose.model('Vendor', vendorSchema);
