@@ -6,6 +6,7 @@ const routes = require('./routes/index');
 const errorHandlers = require('./handlers/errorHandlers');
 const flash = require('connect-flash');
 const session = require('express-session');
+const MongoStore = require('connect-mongo')(session);
 
 // create our Express app
 const app = express();
