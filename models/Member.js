@@ -15,7 +15,8 @@ const memberSchema = new mongoose.Schema(
         type: String,
         trim: true,
         required: 'You must enter a last name!'
-      }
+      },
+      fullName: String
     },
     url: {
       type: String,
@@ -59,16 +60,22 @@ const memberSchema = new mongoose.Schema(
   }
 );
 
+// memberSchema.pre('save', function(next) {
+//   if (!this.isModified('name')) {
+//     next(); // skip it
+//     return; // stop this function from running
+//     // the above two lines could also be written as:
+//     // `return next();`.
+//     //
+//     // also, `isModified()` is a Mongoose method
+//   }
+//   this.slug = slug(this.name);
+//   // TODO make this more resilient so slugs are unique
+//   next();
+// }); // needs to be a long-form function because we need `this`, so arrow func won't do
+
 memberSchema.pre('save', function(next) {
-  if (!this.isModified('name')) {
-    next(); // skip it
-    return; // stop this function from running
-    // the above two lines could also be written as:
-    // `return next();`.
-    //
-    // also, `isModified()` is a Mongoose method
-  }
-  this.slug = slug(this.name);
+  this.name.fullName = `${this.name.first} ${this.name.last}`;
   // TODO make this more resilient so slugs are unique
   next();
 }); // needs to be a long-form function because we need `this`, so arrow func won't do
