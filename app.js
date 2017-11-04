@@ -7,6 +7,7 @@ const errorHandlers = require('./handlers/errorHandlers');
 const flash = require('connect-flash');
 const session = require('express-session');
 const MongoStore = require('connect-mongo')(session);
+const helpers = require('./helpers');
 
 // create our Express app
 const app = express();
@@ -39,7 +40,7 @@ app.use(flash());
 
 // pass variables to our templates + all requests
 app.use((req, res, next) => {
-  // res.locals.h = helpers;
+  res.locals.h = helpers;
   res.locals.flashes = req.flash();
   // res.locals.user = req.user || null;
   // res.locals.currentPath = req.path;
