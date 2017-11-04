@@ -1,5 +1,8 @@
 const mongoose = require('mongoose');
 const Member = mongoose.model('Member');
+const multer = require('multer');
+const jimp = require('jimp');
+const uuid = require('uuid');
 
 exports.addMember = (req, res) => {
   res.render('editMember', { title: 'Add member' });
