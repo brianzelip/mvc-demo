@@ -1,6 +1,6 @@
 mixin memberForm(member = {})
 
-  form.p3.bg-white.shadow(action=`/member/${(member.slug && `/edit`) || `add`}` method="POST")
+  form.p3.bg-white.shadow(action=`/staff/${(member.slug && `/edit`) || `add`}` method="POST")
     .flex.flex-column.sm-flex-row
       .col-12.sm-col-6.sm-mr3
         .mb2
