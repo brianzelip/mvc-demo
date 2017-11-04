@@ -1,10 +1,6 @@
 const mongoose = require('mongoose');
 const Member = mongoose.model('Member');
 
-exports.homePage = (req, res) => {
-  res.render('layout');
-};
-
 exports.addMember = (req, res) => {
   res.render('editMember', { title: 'Add member' });
 };
