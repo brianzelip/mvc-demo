@@ -5,19 +5,17 @@ const slug = require('slugs');
 
 const memberSchema = new mongoose.Schema(
   {
-    name: {
-      first: {
-        type: String,
-        trim: true,
-        required: 'You must enter a first name!'
-      },
-      last: {
-        type: String,
-        trim: true,
-        required: 'You must enter a last name!'
-      },
-      fullName: String
+    nameFirst: {
+      type: String,
+      trim: true,
+      required: 'You must enter a first name!'
     },
+    nameLast: {
+      type: String,
+      trim: true,
+      required: 'You must enter a last name!'
+    },
+    fullName: String,
     url: {
       type: String,
       trim: true
@@ -61,21 +59,29 @@ const memberSchema = new mongoose.Schema(
 );
 
 // memberSchema.pre('save', function(next) {
-//   if (!this.isModified('name')) {
-//     next(); // skip it
-//     return; // stop this function from running
-//     // the above two lines could also be written as:
-//     // `return next();`.
-//     //
-//     // also, `isModified()` is a Mongoose method
-//   }
+// if (!this.isModified('name')) {
+//   next(); // skip it
+//   return; // stop this function from running
+//   // the above two lines could also be written as:
+//   // `return next();`.
+//   //
+//   // also, `isModified()` is a Mongoose method
+// }
 //   this.slug = slug(this.name);
 //   // TODO make this more resilient so slugs are unique
 //   next();
 // }); // needs to be a long-form function because we need `this`, so arrow func won't do
 
 memberSchema.pre('save', function(next) {
-  this.name.fullName = `${this.name.first} ${this.name.last}`;
+  if (!this.isModified('nameFirst') || !this.isModified('nameLast')) {
+    next(); // skip it
+    return; // stop this function from running
+    // the above two lines could also be written as:
+    // `return next();`.
+    //
+    // also, `isModified()` is a Mongoose method
+  }
+  this.fullName = `${this.nameFirst} ${this.nameLast}`;
   // TODO make this more resilient so slugs are unique
   next();
 }); // needs to be a long-form function because we need `this`, so arrow func won't do
