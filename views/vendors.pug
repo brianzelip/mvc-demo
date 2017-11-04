@@ -5,9 +5,9 @@ block content
     .container
       h1= title
       ol.mxn2.list-reset.flex.flex-wrap.align-stretch
-        each vendor in vendors
+        each member in staff
           li.mb3.px2.col-4.flex.align-stretch
             div.p2.col-12.bg-white.shadow
               p.h1
-                a(href=`/vendors/${vendor.slug}`) #{vendor.vendorName}
-              a.block(href=`/vendors/${vendor._id}/edit`) Edit
+                a(href=`/staff/${member.slug}`) #{member.name}
+              a.block(href=`/staff/${member.slug}/edit`) Edit
