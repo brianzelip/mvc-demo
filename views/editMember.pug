@@ -1,9 +1,9 @@
 extends layout
 
-include mixins/_vendorForm
+include mixins/_memberForm
 
 block content
   section.mt3.mb3.px2
     .container
       h1= title
-      +vendorForm(vendor)
+      +memberForm(member)
