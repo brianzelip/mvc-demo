@@ -4,10 +4,10 @@ block content
   section.mt3.mb3
     .container
       h1= title
-      ol.list-reset.flex.flex-wrap.mxn2
+      ol.mxn2.list-reset.flex.flex-wrap.align-stretch
         each vendor in vendors
-          li.mb3.px2.col-4
-            div.p2.bg-white.shadow
+          li.mb3.px2.col-4.flex.align-stretch
+            div.p2.col-12.bg-white.shadow
               p.h1
                 a(href=`/vendors/${vendor.slug}`) #{vendor.vendorName}
               a.block(href=`/vendors/${vendor._id}/edit`) Edit
