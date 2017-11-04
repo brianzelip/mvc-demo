@@ -86,9 +86,9 @@ router.get('/vendors/:slug', catchErrors(vendorController.getVendor));
 // staff
 router.get('/', catchErrors(vendorController.getStaff));
 router.get('/staff', catchErrors(vendorController.getStaff));
-router.get('/member/add', vendorController.addMemberGet);
-router.post('/member/add', catchErrors(vendorController.addMemberPost));
-router.get('/member/:slug/edit', catchErrors(vendorController.editMemberGet));
-router.post('/member/:slug/edit', catchErrors(vendorController.editMemberPost));
-router.get('/member/:slug', catchErrors(vendorController.getMember));
+router.get('/staff/add', vendorController.addStaffGet);
+router.post('/staff/add', catchErrors(vendorController.addStaffPost));
+router.get('/staff/:slug/edit', catchErrors(vendorController.editStaffGet));
+router.post('/staff/:slug/edit', catchErrors(vendorController.editStaffPost));
+router.get('/staff/:slug', catchErrors(vendorController.getStaffMember));
 ```
