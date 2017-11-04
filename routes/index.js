@@ -4,10 +4,10 @@ const vendorController = require('../controllers/vendorController');
 const { catchErrors } = require('../handlers/errorHandlers');
 
 router.get('/', catchErrors(vendorController.getVendors));
-router.get('/vendors', catchErrors(vendorController.getVendors));
-router.get('/add', vendorController.addVendor);
-router.post('/add', catchErrors(vendorController.createVendor));
-router.get('/vendors/:id/edit', catchErrors(vendorController.editVendor));
-router.post('/add/:id', catchErrors(vendorController.updateVendor));
-router.get('/vendors/:slug', catchErrors(vendorController.getVendor));
+router.get('/staff', catchErrors(vendorController.getVendors));
+router.get('/staff/add', vendorController.addVendor);
+router.post('/staff/add', catchErrors(vendorController.createVendor));
+router.get('/staff/:slug/edit', catchErrors(vendorController.editVendor));
+router.post('/staff/:slug/edit', catchErrors(vendorController.updateVendor));
+router.get('/staff/:slug', catchErrors(vendorController.getVendor));
 module.exports = router;
