@@ -3,35 +3,33 @@ const mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
 const slug = require('slugs');
 
-const vendorSchema = new mongoose.Schema(
+const memberSchema = new mongoose.Schema(
   {
-    vendorName: {
+    name: {
       type: String,
       trim: true,
-      required: 'You must enter a vendor name!'
+      required: 'You must enter a member name!'
     },
+    //TODO - make first and last name fields!
+    //
     // vendorType: {
     //   type: String,
     //   required: 'You must select a vendor type!'
     // },
-    vendorUrl: {
+    url: {
       type: String,
       trim: true
     },
-    vendorDescription: String,
+    bio: String,
     twitterUrl: {
       type: String,
       trim: true
     },
-    facebookUrl: {
+    githubUrl: {
       type: String,
       trim: true
     },
     instagramUrl: {
-      type: String,
-      trim: true
-    },
-    etsyUrl: {
       type: String,
       trim: true
     },
@@ -42,8 +40,8 @@ const vendorSchema = new mongoose.Schema(
   }
 );
 
-vendorSchema.pre('save', function(next) {
-  if (!this.isModified('vendorName')) {
+memberSchema.pre('save', function(next) {
+  if (!this.isModified('name')) {
     next(); // skip it
     return; // stop this function from running
     // the above two lines could also be written as:
@@ -51,9 +49,9 @@ vendorSchema.pre('save', function(next) {
     //
     // also, `isModified()` is a Mongoose method
   }
-  this.slug = slug(this.vendorName);
+  this.slug = slug(this.name);
   // TODO make this more resilient so slugs are unique
   next();
 }); // needs to be a long-form function because we need `this`, so arrow func won't do
 
-module.exports = mongoose.model('Vendor', vendorSchema);
+module.exports = mongoose.model('Member', memberSchema);
