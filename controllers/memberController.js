@@ -4,6 +4,23 @@ const multer = require('multer');
 const jimp = require('jimp');
 const uuid = require('uuid');
 
+const multerOptions = {
+  storage: multer.memoryStorage(), // store file into memory instead of to disk, we will save the resized file to disk later
+  fileFilter(req, file, next) {
+    // next is being used as a variable name above for the callback function multer expects, ie: this isn't an express misddleware thing, but since we're in the express env, calling the callback next() in this context makes sense.
+    const isPhoto = file.mimetype.startsWith('image/');
+    if (isPhoto) {
+      next(null, true);
+      // null = no message to pass
+      // true = move along to the next function
+    } else {
+      next({ message: "That filetype is't allowed!" }, false);
+      // message = message
+      // false = don't move along to the next fn, something's wrong!
+    }
+  }
+};
+
 exports.addMember = (req, res) => {
   res.render('editMember', { title: 'Add member' });
 };
