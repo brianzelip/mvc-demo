@@ -92,3 +92,16 @@ router.get('/staff/:slug/edit', catchErrors(vendorController.editStaffGet));
 router.post('/staff/:slug/edit', catchErrors(vendorController.editStaffPost));
 router.get('/staff/:slug', catchErrors(vendorController.getStaffMember));
 ```
+
+What about the data model?
+- `Staff.js`
+- `Member.js`
+- `StaffMember.js`
+
+pass around `member` object when passing around a single entity's data, AND
+pass around `staff` object when passing around all staff.
+
+OR 
+
+pass around `staff` object when passing around a single entity's data, AND
+pass around `allStaff` object when passing around all staff.
