@@ -1,14 +1,14 @@
 mixin memberForm(member = {})
 
-  form.p3.bg-white.shadow(action=`/staff/${(member.slug && `/edit`) || `add`}` method="POST")
+  form.p3.bg-white.shadow(action=`/staff/${(member._id) ? `${member._id}/edit` : `add`}` method="POST")
     .flex.flex-column.sm-flex-row
       .col-12.sm-col-6.sm-mr3
         .mb2
           label(for="first") First name
-          input.block.col-12.field(type="text" id="first" name="name[first]" value=((member.name && member.name.first) || ''))
+          input.block.col-12.field(type="text" id="first" name="nameFirst" value=(member.nameFirst || ''))
         .mb2
           label(for="last") Last name
-          input.block.col-12.field(type="text" id="last" name="name[last]" value=((member.name && member.name.last) || ''))
+          input.block.col-12.field(type="text" id="last" name="nameLast" value=(member.nameLast || ''))
         .mb2
           label(for="url") Personal website address
           input.block.col-12.field(type="text" name="url" value=(member.url || ''))
