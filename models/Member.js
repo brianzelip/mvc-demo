@@ -6,16 +6,17 @@ const slug = require('slugs');
 const memberSchema = new mongoose.Schema(
   {
     name: {
-      type: String,
-      trim: true,
-      required: 'You must enter a member name!'
+      first: {
+        type: String,
+        trim: true,
+        required: 'You must enter a first name!'
+      },
+      last: {
+        type: String,
+        trim: true,
+        required: 'You must enter a last name!'
+      }
     },
-    //TODO - make first and last name fields!
-    //
-    // vendorType: {
-    //   type: String,
-    //   required: 'You must select a vendor type!'
-    // },
     url: {
       type: String,
       trim: true
@@ -33,7 +34,25 @@ const memberSchema = new mongoose.Schema(
       type: String,
       trim: true
     },
-    slug: String
+    photo: String,
+    slug: String,
+    skills: [String],
+    location: {
+      type: {
+        type: String,
+        default: 'Point'
+      },
+      coordinates: [
+        {
+          type: Number,
+          required: 'You must supply coordinates!'
+        }
+      ],
+      address: {
+        type: String,
+        required: 'You must supply an address to supply the coordinates!'
+      }
+    }
   },
   {
     timestamps: true
