@@ -20,15 +20,18 @@ exports.getStaff = async (req, res) => {
 
 exports.editMember = async (req, res) => {
   // 1. Find the member given the slug parameter of the url (ie: `req.params.id`)
-  const member = await Member.findOne({ slug: req.params.slug });
+  const member = await Member.findOne({ _id: req.params.id });
   // 2. Render out the edit form so the user can update the member data
-  res.render('editMember', { title: `Edit ${member.name}`, member });
+  res.render('editMember', { title: `Edit ${member.fullName}`, member });
 };
 
 exports.updateMember = async (req, res) => {
-  // 1. find and update the member
+  // 1. set the fullName since the update doesn't automatically
+  // re-initiate the pre('save') from the model
+  req.body.fullName = `${req.body.nameFirst} ${req.body.nameLast}`;
+  // 2. find and update the member
   const member = await Member.findOneAndUpdate(
-    { slug: req.params.slug },
+    { _id: req.params.id },
     req.body,
     {
       new: true, //tells findOneAndUpdate to return the new member that was
@@ -39,15 +42,15 @@ exports.updateMember = async (req, res) => {
       // this option will run the validator to catch that problem (plus the trims)
     }
   ).exec(); //tells mongoose explicitly to run this query
+  // 3. Redirect them to the member and flash them it worked
   req.flash(
     'success',
-    `Successfully updated <strong>${member.name}</strong>! <a href="/staff/${member.slug}">Go to ${member.name} →</a>`
+    `Successfully updated <strong>${member.fullName}</strong>! <a href="/staff/${member.slug}">Go to ${member.fullName} →</a>`
   );
-  res.redirect(`/staff/${member.slug}/edit`);
-  // 2. Redirect them to the member and flash them it worked
+  res.redirect(`/staff/${member._id}/edit`);
 };
 
 exports.getMember = async (req, res) => {
-  const member = await Member.findOne({ slug: req.params.slug });
-  res.render('member', { title: `${member.name}`, member });
+  const member = await Member.findOne({ _id: req.params.id });
+  res.render('member', { title: `${member.fullName}`, member });
 };
