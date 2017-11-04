@@ -105,3 +105,10 @@ OR
 
 pass around `staff` object when passing around a single entity's data, AND
 pass around `allStaff` object when passing around all staff.
+
+
+TODO:
+- add slug()
+- add photo upload
+- add map?
+- add skills tags array
