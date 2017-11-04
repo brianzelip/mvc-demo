@@ -74,3 +74,24 @@ exports.getMember = async (req, res) => {
   const member = await Member.findOne({ _id: req.params.id });
   res.render('member', { title: `${member.fullName}`, member });
 };
+
+exports.upload = multer(multerOptions).single('photo');
+
+exports.resize = async (req, res, next) => {
+  // 1. make sure a file to resize actually exists
+  if (!req.file) {
+    next();
+    return;
+  }
+  const extension = req.file.mimetype.split('/')[1];
+  req.body.photo = `${uuid.v4()}.${extension}`;
+  // req.body.photo here because, we create the Store obj from the req.body as in the createStore controller above, so here we are attaching a new property called photo where we will pass the view the path to the photo to render!
+
+  // now we resize the photo
+  const photo = await jimp.read(req.file.buffer);
+  await photo.resize(800, jimp.AUTO);
+  await photo.write(`./public/uploads/${req.body.photo}`);
+
+  // once we have written the photo to our file system, keep going!
+  next();
+}; // this is middleware, we will get the photo, edit and save it, then pass it to the edit store controller
