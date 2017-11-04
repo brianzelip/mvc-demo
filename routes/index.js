@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const vendorController = require('../controllers/vendorController');
+const memberController = require('../controllers/memberController');
 const { catchErrors } = require('../handlers/errorHandlers');
 
 router.get('/', catchErrors(vendorController.getVendors));
