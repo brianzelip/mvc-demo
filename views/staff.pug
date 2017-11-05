@@ -7,7 +7,17 @@ block content
       ol.mxn2.list-reset.flex.flex-wrap.align-stretch
         each member in staff
           li.mb3.px2.col-4.flex.align-stretch
-            a.black.hover-no-decoration.thing(href=`/staff/${member._id}`)
+            //- - function colorDice() {
+            //-     const classes = ['grab0', 'grab1', 'grab2'];
+            //-     function roll(min, max) {
+            //-       min = Math.ceil(min);
+            //-       max = Math.floor(max);
+            //-       return Math.floor(Math.random() * (max - min)) + min; //The maximum is exclusive and the minimum is inclusive
+            //-     };
+            //-     return classes[roll(0, classes.length)];
+            //-   }
+            - function roll(numClasses) {return Math.floor(Math.random() * (numClasses - 0)) + 0;}
+            a.black.hover-no-decoration(href=`/staff/${member._id}` class=`colorbar${roll(9)}`)
               div.p2.col-12.bg-white.shadow
                 figure.mx0
                   img.block.mx-auto.col-7.circle.shadow(src=`/uploads/${member.photo}`, alt="")
