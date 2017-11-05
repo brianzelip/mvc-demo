@@ -89,7 +89,7 @@ exports.resize = async (req, res, next) => {
 
   // now we resize the photo
   const photo = await jimp.read(req.file.buffer);
-  await photo.resize(800, jimp.AUTO);
+  await photo.resize(800, 800);
   await photo.write(`./public/uploads/${req.body.photo}`);
 
   // once we have written the photo to our file system, keep going!
