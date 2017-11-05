@@ -20,6 +20,11 @@ const memberSchema = new mongoose.Schema(
       type: String,
       trim: true
     },
+    title: {
+      type: String,
+      trim: true,
+      required: 'You must enter a title!'
+    },
     bio: String,
     twitterUrl: {
       type: String,
@@ -29,7 +34,11 @@ const memberSchema = new mongoose.Schema(
       type: String,
       trim: true
     },
-    instagramUrl: {
+    linkedinUrl: {
+      type: String,
+      trim: true
+    },
+    dribbleUrl: {
       type: String,
       trim: true
     },
