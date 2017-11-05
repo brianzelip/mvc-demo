@@ -16,8 +16,10 @@ block content
             //-     };
             //-     return classes[roll(0, classes.length)];
             //-   }
-            - function roll(numClasses) {return Math.floor(Math.random() * (numClasses - 0)) + 0;}
-            a.black.hover-no-decoration(href=`/staff/${member._id}` class=`colorbar colorbar--${roll(10)}`)
+            - const colors = ['#0093e9', '#80d0c7', '#cacb41', '#ba0e3a', '#ffe53b', '#ff2525', '#85ffbd', '#fffb7d', '#21d4fd', '#b721ff', '#4158d0', '#c850c0', '#ffcc70', '#ff9a8b', '#ff6a88', '#52acff', '#ffe32c', '#d56bb0', '#ddd6f3', '#b6df35', '#fa8bff', '#2bd2ff', '#2bff88']
+            - function randColor(arrOfColors) {return arrOfColors[Math.floor(Math.random() * (arrOfColors.length - 0)) + 0];}
+            - function randNum(min, max) {return Math.floor(Math.random() * (max - min)) + min;}
+            a.black.hover-no-decoration.colorbar(href=`/staff/${member._id}` style=`background-color: #faaca8; background-image: linear-gradient(${randNum(45, 95)}deg, ${randColor(colors)} 0%, ${randColor(colors)} ${randNum(40, 60)}%, ${randColor(colors)} ${randNum(75, 100)}%)`)
               div.p2.col-12.bg-white.shadow
                 figure.mx0
                   img.block.mx-auto.col-7.circle.shadow(src=`/uploads/${member.photo}`, alt="")

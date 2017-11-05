@@ -376,6 +376,12 @@ input[type='text'].input-group-position__input {
   width: 100%;
 }
 
+.colorbar::after {
+  content: '';
+  display: block;
+  background-color: white;
+}
+
 .colorbar--0::before {
   background-color: #0093e9;
   background-image: linear-gradient(
