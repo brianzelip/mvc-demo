@@ -14,7 +14,7 @@ const multerOptions = {
       // null = no message to pass
       // true = move along to the next function
     } else {
-      next({ message: "That filetype is't allowed!" }, false);
+      next({ message: "That filetype is't allowed!" }, true);
       // message = message
       // false = don't move along to the next fn, something's wrong!
     }
@@ -65,7 +65,7 @@ exports.updateMember = async (req, res) => {
   // 3. Redirect them to the member and flash them it worked
   req.flash(
     'success',
-    `Successfully updated <strong>${member.fullName}</strong>! <a href="/staff/${member.slug}">Go to ${member.fullName} →</a>`
+    `Successfully updated <strong>${member.fullName}</strong>! <a href="/staff/${member._id}">Go to ${member.fullName} →</a>`
   );
   res.redirect(`/staff/${member._id}/edit`);
 };
