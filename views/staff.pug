@@ -17,7 +17,7 @@ block content
             //-     return classes[roll(0, classes.length)];
             //-   }
             - function roll(numClasses) {return Math.floor(Math.random() * (numClasses - 0)) + 0;}
-            a.black.hover-no-decoration(href=`/staff/${member._id}` class=`colorbar${roll(9)}`)
+            a.black.hover-no-decoration(href=`/staff/${member._id}` class=`colorbar colorbar--${roll(10)}`)
               div.p2.col-12.bg-white.shadow
                 figure.mx0
                   img.block.mx-auto.col-7.circle.shadow(src=`/uploads/${member.photo}`, alt="")

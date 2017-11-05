@@ -331,7 +331,7 @@ input[type='text'].input-group-position__input {
   color: var(--color-info);
 }
 
-.colorbar0::before {
+.dang::before {
   content: '';
   display: block;
   background: linear-gradient(
@@ -361,69 +361,48 @@ input[type='text'].input-group-position__input {
   height: 10px;
   width: 100%;
 }
-.colorbar1::before {
+
+.colorbar::before {
   content: '';
   display: block;
+  background-repeat: repeat;
+  background-attachment: scroll;
+  background-clip: border-box;
+  background-origin: padding-box;
+  background-position-x: 0%;
+  background-position-y: 0%;
+  background-size: auto auto;
+  height: 0.75rem;
+  width: 100%;
+}
+
+.colorbar--0::before {
+  background-color: #0093e9;
+  background-image: linear-gradient(
+    64deg,
+    #0093e9 0%,
+    #80d0c7 39%,
+    #cacb41 60%,
+    #ba0e3a 98%
+  );
+}
+.colorbar--1::before {
   background-color: #ffe53b;
   background-image: linear-gradient(147deg, #ffe53b 0%, #ff2525 100%);
-  background-repeat: repeat;
-  background-attachment: scroll;
-  background-clip: border-box;
-  background-origin: padding-box;
-  background-position-x: 0%;
-  background-position-y: 0%;
-  background-size: auto auto;
-  height: 10px;
-  width: 100%;
 }
-.colorbar2::before {
-  content: '';
-  display: block;
+.colorbar--2::before {
   background-color: #85ffbd;
   background-image: linear-gradient(45deg, #85ffbd 0%, #fffb7d 100%);
-  background-repeat: repeat;
-  background-attachment: scroll;
-  background-clip: border-box;
-  background-origin: padding-box;
-  background-position-x: 0%;
-  background-position-y: 0%;
-  background-size: auto auto;
-  height: 10px;
-  width: 100%;
 }
-.colorbar3::before {
-  content: '';
-  display: block;
+.colorbar--3::before {
   background-color: #21d4fd;
   background-image: linear-gradient(283deg, #21d4fd 0%, #b721ff 100%);
-  background-repeat: repeat;
-  background-attachment: scroll;
-  background-clip: border-box;
-  background-origin: padding-box;
-  background-position-x: 0%;
-  background-position-y: 0%;
-  background-size: auto auto;
-  height: 10px;
-  width: 100%;
 }
-.colorbar4::before {
-  content: '';
-  display: block;
+.colorbar--4::before {
   background-color: #21d4fd;
   background-image: linear-gradient(19deg, #21d4fd 0%, #b721ff 100%);
-  background-repeat: repeat;
-  background-attachment: scroll;
-  background-clip: border-box;
-  background-origin: padding-box;
-  background-position-x: 0%;
-  background-position-y: 0%;
-  background-size: auto auto;
-  height: 10px;
-  width: 100%;
 }
-.colorbar5::before {
-  content: '';
-  display: block;
+.colorbar--5::before {
   background-color: #4158d0;
   background-image: linear-gradient(
     43deg,
@@ -431,19 +410,8 @@ input[type='text'].input-group-position__input {
     #c850c0 46%,
     #ffcc70 100%
   );
-  background-repeat: repeat;
-  background-attachment: scroll;
-  background-clip: border-box;
-  background-origin: padding-box;
-  background-position-x: 0%;
-  background-position-y: 0%;
-  background-size: auto auto;
-  height: 10px;
-  width: 100%;
 }
-.colorbar6::before {
-  content: '';
-  display: block;
+.colorbar--6::before {
   background-color: #ff9a8b;
   background-image: linear-gradient(
     90deg,
@@ -451,19 +419,8 @@ input[type='text'].input-group-position__input {
     #ff6a88 55%,
     #ff99ac 100%
   );
-  background-repeat: repeat;
-  background-attachment: scroll;
-  background-clip: border-box;
-  background-origin: padding-box;
-  background-position-x: 0%;
-  background-position-y: 0%;
-  background-size: auto auto;
-  height: 10px;
-  width: 100%;
 }
-.colorbar7::before {
-  content: '';
-  display: block;
+.colorbar--7::before {
   background-color: #52acff;
   background-image: linear-gradient(
     270deg,
@@ -471,19 +428,8 @@ input[type='text'].input-group-position__input {
     #ffe32c 41%,
     #d56bb0 93%
   );
-  background-repeat: repeat;
-  background-attachment: scroll;
-  background-clip: border-box;
-  background-origin: padding-box;
-  background-position-x: 0%;
-  background-position-y: 0%;
-  background-size: auto auto;
-  height: 10px;
-  width: 100%;
 }
-.colorbar8::before {
-  content: '';
-  display: block;
+.colorbar--8::before {
   background-color: #faaca8;
   background-image: linear-gradient(
     90deg,
@@ -491,13 +437,13 @@ input[type='text'].input-group-position__input {
     #ddd6f3 50%,
     #b6df35 79%
   );
-  background-repeat: repeat;
-  background-attachment: scroll;
-  background-clip: border-box;
-  background-origin: padding-box;
-  background-position-x: 0%;
-  background-position-y: 0%;
-  background-size: auto auto;
-  height: 10px;
-  width: 100%;
+}
+.colorbar--9::before {
+  background-color: #fa8bff;
+  background-image: linear-gradient(
+    45deg,
+    #fa8bff 0%,
+    #2bd2ff 52%,
+    #2bff88 90%
+  );
 }
