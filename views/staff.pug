@@ -7,7 +7,16 @@ block content
       ol.mxn2.list-reset.flex.flex-wrap.align-stretch
         each member in staff
           li.mb3.px2.col-4.flex.align-stretch
-            div.p2.col-12.bg-white.shadow
-              p.h1
-                a(href=`/staff/${member._id}`) #{member.fullName}
-              a.block(href=`/staff/${member._id}/edit`) Edit
+            a.black.hover-no-decoration(href=`/staff/${member._id}`)
+              div.p2.col-12.bg-white.shadow(style="border-top: .25rem solid rgb(0,122,223)")
+                figure.mx0
+                  img.block.mx-auto.col-7.circle.shadow(src=`/uploads/${member.photo}`, alt="")
+                p.mb0.h2.center.dark-blue #{member.fullName}
+                p.h4.center.dark-blue #{member.bio}
+                ul.list-reset.mb0.pt2.flex.flex-wrap
+                  li.flex.flex-center.mr1.mb1.p1.h6.info python
+                  li.flex.flex-center.mr1.mb1.p1.h6.info javascript
+                  li.flex.flex-center.mr1.mb1.p1.h6.info security
+                  li.flex.flex-center.mr1.mb1.p1.h6.info design
+                  li.flex.flex-center.mr1.mb1.p1.h6.info people
+              //- a(href=`/staff/${member._id}/edit`) Edit

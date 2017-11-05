@@ -56,6 +56,12 @@ input[type='url'],
   --bg-color-error: color(var(--state-error) tint(75%));
   --color-error: color(var(--state-error) lightness(25%));
   --border-color-error: color(var(--bg-color-error) shade(25%));
+
+  --color-blue: rgb(0, 122, 223);
+  --state-info: var(--color-blue);
+  --bg-color-info: color(var(--state-info) tint(75%));
+  --color-info: color(var(--state-info) lightness(25%));
+  --border-color-info: color(var(--bg-color-info) shade(25%));
 }
 
 /* Base */
@@ -69,6 +75,7 @@ body,
 body {
   color: var(--black);
 }
+
 body,
 h1,
 h2,
@@ -76,7 +83,8 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Merriweather Sans', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+    Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
 }
 .AveriaSerifLibre {
   font-family: 'Averia Serif Libre';
@@ -120,6 +128,10 @@ h6 {
   text-decoration: none;
 }
 
+.black {
+  color: var(--black);
+}
+
 /*  background colors */
 .bg-black {
   background-color: var(--black);
@@ -128,8 +140,12 @@ h6 {
   background-color: #efefef;
 }
 
+.bg-dark-gray {
+  background-color: rgb(221, 222, 222);
+}
+
 .shadow {
-  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.2);
 }
 
 .bg-dots,
@@ -230,18 +246,19 @@ input[type='text'].input-group-position__input {
     flex-direction: row;
   }
 }
+.justify-around {
+  justify-content: space-around;
+}
+.align-stretch {
+  align-items: stretch;
+}
+.self-stretch {
+  align-self: stretch;
+}
 
 .hover-bg:hover {
   background-color: white;
   color: var(--black);
-}
-
-.align-stretch {
-  align-items: stretch;
-}
-
-.self-stretch {
-  align-self: stretch;
 }
 
 .flash {
@@ -267,4 +284,40 @@ input[type='text'].input-group-position__input {
 
 .cursor {
   cursor: default;
+}
+
+.mtn2 {
+  margin-top: -1rem;
+}
+
+.mn2 {
+  margin-top: -1rem;
+  margin-right: -1rem;
+  margin-bottom: -1rem;
+  margin-left: -1rem;
+}
+
+.mx0 {
+  margin-right: 0;
+  margin-left: 0;
+}
+
+.pt2 {
+  padding-top: 1rem;
+}
+
+.skew20 {
+  transform: skew(20deg);
+}
+.skew-20 {
+  transform: skew(-20deg);
+}
+
+.info {
+  color: var(--color-info);
+  background-color: var(--bg-color-info);
+  /* border: 1px solid var(--border-color-info); */
+}
+.dark-blue {
+  color: var(--color-info);
 }
