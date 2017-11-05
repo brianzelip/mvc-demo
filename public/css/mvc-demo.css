@@ -132,9 +132,19 @@ h6 {
   box-shadow: 0 1px 10px rgba(0, 0, 0, 0.15);
 }
 
-.bg-dots {
+.bg-dots,
+.hover-bg-dots:hover {
   background-color: #dadbdb;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%2399b3f2' fill-opacity='0.32' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
+}
+.hover-bg-dots:hover {
+  color: var(--black);
+  /* transition: all 100ms cubic-bezier(0.4, 0, 0.2, 1); */
+}
+
+.field.is-read-only,
+.field:-moz-read-only:not(select) {
+  background-color: var(--light-gray);
 }
 
 input[type='date'],
@@ -149,7 +159,8 @@ input[type='tel'],
 input[type='text'],
 input[type='time'],
 input[type='url'],
-input[type='week'] {
+input[type='week'],
+input[type='file'] {
   padding: 0.25rem;
 }
 
