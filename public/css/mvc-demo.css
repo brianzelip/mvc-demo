@@ -44,9 +44,10 @@ input[type='url'],
 :root {
   --black: rgb(30, 30, 30);
   --light-gray: #efefef;
+  --green: #52b884;
 
   /* flashes vars */
-  --color-green: #2ecc40;
+  --color-green: #52b884;
   --color-red: #ff4136;
   --state-success: var(--color-green);
   --state-error: var(--color-red);
@@ -58,7 +59,7 @@ input[type='url'],
   --border-color-error: color(var(--bg-color-error) shade(25%));
 
   --color-blue: rgb(0, 122, 223);
-  --state-info: var(--color-blue);
+  --state-info: var(--color-green);
   --bg-color-info: color(var(--state-info) tint(75%));
   --color-info: color(var(--state-info) lightness(25%));
   --border-color-info: color(var(--bg-color-info) shade(25%));
@@ -320,4 +321,43 @@ input[type='text'].input-group-position__input {
 }
 .dark-blue {
   color: var(--color-info);
+}
+
+.green {
+  color: var(--color-green);
+}
+
+.dark-green {
+  color: var(--color-info);
+}
+
+.thing::before {
+  content: '';
+  display: block;
+  background: linear-gradient(
+    90deg,
+    #48ded4 0%,
+    #a026bf 20%,
+    #e82c75 60%,
+    #ffc40e 85%,
+    #48ded4 95%
+  );
+  background-color: rgba(0, 0, 0, 0);
+  background-image: linear-gradient(
+    90deg,
+    rgb(72, 222, 212) 0%,
+    rgb(160, 38, 191) 20%,
+    rgb(232, 44, 117) 60%,
+    rgb(255, 196, 14) 85%,
+    rgb(72, 222, 212) 95%
+  );
+  background-repeat: repeat;
+  background-attachment: scroll;
+  background-clip: border-box;
+  background-origin: padding-box;
+  background-position-x: 0%;
+  background-position-y: 0%;
+  background-size: auto auto;
+  height: 10px;
+  width: 100%;
 }

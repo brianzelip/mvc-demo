@@ -7,8 +7,8 @@ block content
       ol.mxn2.list-reset.flex.flex-wrap.align-stretch
         each member in staff
           li.mb3.px2.col-4.flex.align-stretch
-            a.black.hover-no-decoration(href=`/staff/${member._id}`)
-              div.p2.col-12.bg-white.shadow(style="border-top: .25rem solid rgb(0,122,223)")
+            a.black.hover-no-decoration.thing(href=`/staff/${member._id}`)
+              div.p2.col-12.bg-white.shadow
                 figure.mx0
                   img.block.mx-auto.col-7.circle.shadow(src=`/uploads/${member.photo}`, alt="")
                 p.mb0.h2.center.dark-blue #{member.fullName}
