@@ -109,6 +109,37 @@ pass around `allStaff` object when passing around all staff.
 
 TODO:
 - add slug()
-- add photo upload
+- ~~add photo upload~~
 - add map?
 - add skills tags array
+- create profile cards for `/staff`
+- create profile pages for `/staff/:slug`
+
+re: skills array:
+- can have a set of hard-coded options that a user can pick up to 5
+- options:
+  - node
+  - python
+  - ruby
+  - go
+  - javascript
+  - php
+  - css
+  - react
+  - security
+  - visualization
+  - data
+  - sketch
+  - animations
+  - design
+  - front end
+  - back end
+  - ui/ux
+  - typography
+  - ia
+  - content
+  - admin
+  - people
+  - relationships
+  - instruction
+  - teaching
