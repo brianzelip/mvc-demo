@@ -1,6 +1,6 @@
 mixin memberForm(member = {})
 
-  form.p3.bg-white.shadow(action=`/staff/${(member._id) ? `${member._id}/edit` : `add`}` method="POST")
+  form.p3.bg-white.shadow(action=`/staff/${(member._id) ? `${member._id}/edit` : `add`}` method="POST" enctype="multipart/form-data")
     .flex.flex-column.sm-flex-row
       .col-12.sm-col-6.sm-mr3
         .mb2
@@ -27,4 +27,10 @@ mixin memberForm(member = {})
             .input-group-position
               i.input-group-position__icon.fa.fa-fw(class=`fa-${social.toLowerCase()}`)
               input.input-group-position__input.field(type="text" name=`${social.toLowerCase()}Url` value=(member[`${social.toLowerCase()}Url`] || ''))
+        .mb2
+          label(for="photo") Photo
+          input.block.col-12.field(type="file" id="photo" name="photo" accept="image/gif, image/png, image/jpeg")
+          //- the accept attr here does not disable people from messing with client side dev tools to rm the allowed filetypes, but we protect ourselves against this on the server controller with multerOptions. This accept is useful incase a user tries to upload a non-image like a pdf or psd!
+          if member.photo
+            img(src=`/uploads/${member.photo}`, alt=member.name width=200)
     input.btn.btn-primary.col-12.mt2(type="submit" value="Save →")
