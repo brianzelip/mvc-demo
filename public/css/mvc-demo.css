@@ -211,9 +211,9 @@ input[type='file'] {
   border-right: 1px solid rgb(204, 204, 204);
 }
 .input-group-flex__input {
-  flex: 1 1 auto;
   border: none;
 }
+flex: 1 1 auto;
 .input-group-flex__input:focus {
   border: none;
 }
@@ -247,14 +247,25 @@ input[type='text'].input-group-position__input {
     flex-direction: row;
   }
 }
-.justify-around {
-  justify-content: space-around;
+
+.align-items-center {
+  align-items: center;
 }
-.align-stretch {
+.align-items-stretch {
   align-items: stretch;
 }
+.align-content-center {
+  align-content: center;
+}
+.align-content-stretch {
+  align-content: stretch;
+}
+
 .self-stretch {
   align-self: stretch;
+}
+.justify-around {
+  justify-content: space-around;
 }
 
 .hover-bg:hover {
@@ -374,12 +385,6 @@ input[type='text'].input-group-position__input {
   background-size: auto auto;
   height: 0.75rem;
   width: 100%;
-}
-
-.colorbar::after {
-  content: '';
-  display: block;
-  background-color: white;
 }
 
 .colorbar--0::before {
