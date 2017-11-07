@@ -7,14 +7,8 @@ block content
       ol.mxn2.list-reset.flex.flex-wrap
         each member, index in staff
           li.mb3.px2.col-4.flex
-            - const colors = [h.rand.color(h.colors), h.rand.color(h.colors), h.rand.color(h.colors)]
-            - const angle = `${h.rand.num(65, 116)}deg`
-            - const px = h.rand.num(0, 255)
             style.
-              .colorbar--#{index}::before {
-                background-color: rgb(#{h.rand.num(0, 255)}, #{h.rand.num(0, 255)}, #{h.rand.num(0, 255)});
-                background-image: linear-gradient(#{h.rand.num(65, 116)}deg, rgb(#{h.rand.num(0, 255)}, #{h.rand.num(0, 255)}, #{h.rand.num(0, 255)}) #{h.rand.num(0, 13)}%, rgb(#{h.rand.num(0, 255)}, #{h.rand.num(0, 255)}, #{h.rand.num(0, 255)}) #{h.rand.num(33, 61)}%, rgb(#{h.rand.num(0, 255)}, #{h.rand.num(0, 255)}, #{h.rand.num(0, 255)}) #{h.rand.num(70, 85)}%);
-              }
+              .colorbar--#{index}::before {background: #{h.randGradient()}}
             a.black.hover-no-decoration.bg-white.shadow.colorbar(href=`/staff/${member._id}` class=`colorbar--${index}`)
               .p2.col-12
                 figure.mx0
@@ -28,6 +22,12 @@ block content
                   li.flex.flex-center.mr1.mb1.p1.h6.info design
                   li.flex.flex-center.mr1.mb1.p1.h6.info people
               //- a(href=`/staff/${member._id}/edit`) Edit
+      - const numMods = 25;
+      - let count = 0;
+      while count < numMods
+        - const grad = h.randGradient()
+        div.p2(style=`background: ${grad}`)= grad
+        - count ++
       each color in h.colors
         div(style=`height: 20px; background-color: ${color}`) #{h.colors.indexOf(color)} #{color}
       p(style=`background-color: ${h.rand.color(h.colors)}`) hi mom!

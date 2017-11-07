@@ -387,7 +387,7 @@ input[type='text'].input-group-position__input {
   width: 100%;
 }
 
-.colorbar--0::before {
+/* .colorbar--0::before {
   background-color: #0093e9;
   background-image: linear-gradient(
     64deg,
@@ -457,4 +457,148 @@ input[type='text'].input-group-position__input {
     #2bd2ff 52%,
     #2bff88 90%
   );
+} */
+
+/* .colorbar--0::before {
+  background-color: #ff9a8b;
+  background-image: linear-gradient(90deg, #ff9a8b 0%, #ff6a88 100%);
 }
+.colorbar--1::before {
+  background-color: #ffdee9;
+  background-image: linear-gradient(117deg, #ffdee9 0%, #b5fffc 100%);
+}
+
+.colorbar--2::before {
+  background-color: #85ffbd;
+  background-image: linear-gradient(45deg, #85ffbd 0%, #fffb7d 100%);
+}
+
+.colorbar--3::before {
+  background-color: #4158d0;
+  background-image: linear-gradient(
+    43deg,
+    #4158d0 0%,
+    #c850c0 46%,
+    #ffcc70 100%
+  );
+}
+
+.colorbar--4::before {
+  background-color: #55d53a;
+  background-image: linear-gradient(112deg, #55d53a 0%, #9599e2 100%);
+}
+
+.colorbar--5::before {
+  background-color: #a9c9ff;
+  background-image: linear-gradient(77deg, #a9c9ff 0%, #ffbbec 100%);
+}
+
+.colorbar--6::before {
+  background-color: #a8bfb5;
+  background-image: linear-gradient(297deg, #a8bfb5 0%, #b6ae45 100%);
+}
+
+.colorbar--7::before {
+  background-color: #fbda61;
+  background-image: linear-gradient(45deg, #fbda61 0%, #ff5acd 100%);
+}
+
+.colorbar--8::before {
+  background-color: #fa8bff;
+  background-image: linear-gradient(
+    45deg,
+    #fa8bff 0%,
+    #2bd2ff 52%,
+    #2bff88 90%
+  );
+}
+
+.colorbar--9::before {
+  background-color: #fad961;
+  background-image: linear-gradient(90deg, #fad961 0%, #f76b1c 100%);
+}
+
+.colorbar--10::before {
+  background-color: #74ebd5;
+  background-image: linear-gradient(90deg, #74ebd5 0%, #9face6 100%);
+}
+
+.colorbar--11::before {
+  background-color: #0093e9;
+  background-image: linear-gradient(90deg, #0093e9 0%, #80d0c7 100%);
+}
+
+.colorbar--12::before {
+  background-color: #f4d03f;
+  background-image: linear-gradient(132deg, #f4d03f 0%, #16a085 100%);
+}
+
+.colorbar--13::before {
+  background-color: #ff3cac;
+  background-image: linear-gradient(
+    225deg,
+    #ff3cac 0%,
+    #784ba0 50%,
+    #2b86c5 100%
+  );
+}
+
+.colorbar--14::before {
+  background-color: #d9afd9;
+  background-image: linear-gradient(62deg, #d9afd9 0%, #97d9e1 100%);
+}
+
+.colorbar--15::before {
+  background-color: #00dbde;
+  background-image: linear-gradient(62deg, #00dbde 0%, #ffee00 99%);
+}
+
+.colorbar--16::before {
+  background-color: #fbab7e;
+  background-image: linear-gradient(62deg, #fbab7e 0%, #f7ce68 100%);
+}
+
+.colorbar--17::before {
+  background-color: #8ec5fc;
+  background-image: linear-gradient(62deg, #8ec5fc 0%, #e0c3fc 100%);
+}
+
+.colorbar--18::before {
+  background-color: #fee140;
+  background-image: linear-gradient(90deg, #fee140 0%, #fa709a 100%);
+}
+
+.colorbar--19::before {
+  background-color: #faaca8;
+  background-image: linear-gradient(62deg, #faaca8 0%, #ddd6f3 100%);
+}
+
+.colorbar--20::before {
+  background-color: #21d4fd;
+  background-image: linear-gradient(61deg, #21d4fd 0%, #b721ff 100%);
+}
+
+.colorbar--21::before {
+  background-color: #08aeea;
+  background-image: linear-gradient(237deg, #08aeea 0%, #2af598 100%);
+}
+
+.colorbar--22::before {
+  background-color: #ffe53b;
+  background-image: linear-gradient(147deg, #ffe53b 0%, #ff2525 74%);
+}
+
+.colorbar--23::before {
+  background-color: #52acff;
+  background-image: linear-gradient(90deg, #52acff 25%, #ffe32c 100%);
+}
+
+.colorbar--24::before {
+  background-color: #ffffff;
+  background-image: linear-gradient(
+    304deg,
+    #ffffff 0%,
+    #6284ff 63%,
+    #ff0000 100%
+  );
+} */
