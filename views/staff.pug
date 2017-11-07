@@ -5,12 +5,18 @@ block content
     .container
       h1= title
       ol.mxn2.list-reset.flex.flex-wrap
-        each member in staff
-          - const colors = [h.rand.color(h.colors), h.rand.color(h.colors), h.rand.color(h.colors)]
-          - const angle = `${h.rand.num(65, 116)}deg`
+        each member, index in staff
           li.mb3.px2.col-4.flex
-            a.black.hover-no-decoration.flex(href=`/staff/${member._id}`)
-              div.p2.col-12.bg-white.shadow
+            - const colors = [h.rand.color(h.colors), h.rand.color(h.colors), h.rand.color(h.colors)]
+            - const angle = `${h.rand.num(65, 116)}deg`
+            - const px = h.rand.num(0, 255)
+            style.
+              .colorbar--#{index}::before {
+                background-color: rgb(#{h.rand.num(0, 255)}, #{h.rand.num(0, 255)}, #{h.rand.num(0, 255)});
+                background-image: linear-gradient(#{h.rand.num(65, 116)}deg, rgb(#{h.rand.num(0, 255)}, #{h.rand.num(0, 255)}, #{h.rand.num(0, 255)}) #{h.rand.num(0, 13)}%, rgb(#{h.rand.num(0, 255)}, #{h.rand.num(0, 255)}, #{h.rand.num(0, 255)}) #{h.rand.num(33, 61)}%, rgb(#{h.rand.num(0, 255)}, #{h.rand.num(0, 255)}, #{h.rand.num(0, 255)}) #{h.rand.num(70, 85)}%);
+              }
+            a.black.hover-no-decoration.bg-white.shadow.colorbar(href=`/staff/${member._id}` class=`colorbar--${index}`)
+              .p2.col-12
                 figure.mx0
                   img.block.mx-auto.col-7.circle.shadow(src=`/uploads/${member.photo}`, alt="")
                 p.mb0.h2.center.dark-blue #{member.fullName}
@@ -25,22 +31,15 @@ block content
       each color in h.colors
         div(style=`height: 20px; background-color: ${color}`) #{h.colors.indexOf(color)} #{color}
       p(style=`background-color: ${h.rand.color(h.colors)}`) hi mom!
-      .py4
-      .flex.flex-wrap.mxn2
-        each member in staff
-          - const colors = [h.rand.color(h.colors), h.rand.color(h.colors), h.rand.color(h.colors)]
-          - const angle = `${h.rand.num(65, 116)}deg`
-          .col-4.flex.mb3.px2
-            div.p2.col-12.bg-white.shadow
-              figure.mx0
-                img.block.mx-auto.col-7.circle.shadow(src=`/uploads/${member.photo}`, alt="")
-              p.mb0.h2.center.dark-blue #{member.fullName}
-              p.h4.center.dark-blue #{member.bio}
-              ul.list-reset.mb0.pt2.flex.flex-wrap
-                li.flex.flex-center.mr1.mb1.p1.h6.info python
-                li.flex.flex-center.mr1.mb1.p1.h6.info javascript
-                li.flex.flex-center.mr1.mb1.p1.h6.info security
-                li.flex.flex-center.mr1.mb1.p1.h6.info design
-                li.flex.flex-center.mr1.mb1.p1.h6.info people
 
 //- (style=`background-color: ${colors[0]}; background-image: linear-gradient(${angle}, ${colors[0]} 0%, ${colors[1]} 50%, ${colors[2]} 71%)`)
+//- .colorbar--#{index}::before {
+//-   background-color: #{h.rand.color(h.colors)};
+//-   background-image: linear-gradient(#{h.rand.num(65, 116)}deg, #{h.rand.color(h.colors)} 0%, #{h.rand.color(h.colors)} 50%, #{h.rand.color(h.colors)} 71%);
+//- }
+
+//- style.
+//-   .colorbar--#{index}::before {
+//-     background-color: rgb(#{h.rand.num(0, 255)}, #{h.rand.num(0, 255)}, #{h.rand.num(0, 255)});
+//-     background-image: linear-gradient(#{h.rand.num(65, 116)}deg, rgb(#{h.rand.num(0, 255)}, #{h.rand.num(0, 255)}, #{h.rand.num(0, 255)}) #{h.rand.num(0, 13)}%, rgb(#{h.rand.num(0, 255)}, #{h.rand.num(0, 255)}, #{h.rand.num(0, 255)}) #{h.rand.num(33, 61)}%, rgb(#{h.rand.num(0, 255)}, #{h.rand.num(0, 255)}, #{h.rand.num(0, 255)}) #{h.rand.num(70, 85)}%);
+//-   }
