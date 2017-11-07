@@ -1,0 +1,7 @@
+extends layout
+
+block content
+  - let i = 0
+  while i < h.gradientsArr.length
+    .p2(style=`background: ${h.gradientsArr[i]}`)= h.gradientsArr[i]
+    - i ++

@@ -95,3 +95,7 @@ exports.resize = async (req, res, next) => {
   // once we have written the photo to our file system, keep going!
   next();
 }; // this is middleware, we will get the photo, edit and save it, then pass it to the edit store controller
+
+exports.test = (req, res) => {
+  res.render('test', { title: 'TESTING' });
+};

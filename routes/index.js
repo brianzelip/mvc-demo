@@ -20,5 +20,5 @@ router.post(
   catchErrors(memberController.updateMember)
 );
 router.get('/staff/:id', catchErrors(memberController.getMember));
-
+router.get('/test', memberController.test);
 module.exports = router;
