@@ -73,7 +73,7 @@ exports.updateMember = async (req, res) => {
 };
 
 exports.getMember = async (req, res) => {
-  const member = await Member.findOne({ _id: req.params.id });
+  const member = await Member.findOne({ slug: req.params.slug });
   res.render('member', { title: `${member.fullName}`, member });
 };
 

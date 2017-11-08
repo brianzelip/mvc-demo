@@ -19,6 +19,6 @@ router.post(
   catchErrors(memberController.resize),
   catchErrors(memberController.updateMember)
 );
-router.get('/staff/:id', catchErrors(memberController.getMember));
+router.get('/staff/:slug', catchErrors(memberController.getMember));
 router.get('/test', memberController.test);
 module.exports = router;
