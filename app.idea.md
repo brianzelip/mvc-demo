@@ -108,12 +108,12 @@ pass around `allStaff` object when passing around all staff.
 
 
 TODO:
-- add slug()
+- ~~add slug()~~
 - ~~add photo upload~~
 - add map?
 - add skills tags array
-- create profile cards for `/staff`
-- create profile pages for `/staff/:slug`
+- ~~create profile cards for `/staff`~~
+- ~~create profile pages for `/staff/:slug`~~
 
 re: skills array:
 - can have a set of hard-coded options that a user can pick up to 5
