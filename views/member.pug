@@ -4,3 +4,15 @@ block content
   section.mt3.mb3
     .container
       h1= title
+        i.ml2.h2.fa.fa-pencil(aria-hidden="true")
+        figure.mx0
+          img.block.mx-auto.col-7.circle.shadow(src=`/uploads/${member.photo}`, alt=`${member.fullName}`, title=`${member.fullName}`)
+        p.mb0.h2.center.dark-blue #{member.fullName}
+        p.h4.center.dark-blue #{member.bio}
+        ul.list-reset.mb0.pt2.flex.flex-wrap
+          li.flex.flex-center.mr1.mb1.p1.h6.info python
+          li.flex.flex-center.mr1.mb1.p1.h6.info javascript
+          li.flex.flex-center.mr1.mb1.p1.h6.info security
+          li.flex.flex-center.mr1.mb1.p1.h6.info design
+          li.flex.flex-center.mr1.mb1.p1.h6.info people
+
