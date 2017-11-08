@@ -10,13 +10,19 @@ mixin memberForm(member = {})
           label(for="last") Last name
           input.block.col-12.field(type="text" id="last" name="nameLast" value=(member.nameLast || ''))
         .mb2
-          label(for="url") Personal website address
-          input.block.col-12.field(type="text" name="url" value=(member.url || ''))
+          label(for="title") Title
+          input.block.col-12.field(type="text" name="title" value=(member.title || ''))
         .mb2
           label(for="bio") Bio
           textarea.block.col-12.field(name="bio")= member.bio || ''
+        .mb2
+          label(for="photo") Photo
+          input.block.col-12.field(type="file" id="photo" name="photo" accept="image/gif, image/png, image/jpeg")
       .col-12.sm-col-6
-        - const socials = ['GitHub', 'Twitter', 'Instagram']
+        .mb2
+          label(for="url") Website address
+          input.block.col-12.field(type="text" name="url" value=(member.url || ''))
+        - const socials = ['GitHub', 'Dribbble', 'Twitter', 'LinkedIn']
         each social in socials
           .mb2
             label(for=`${social.toLowerCase()}Url`)= `${social} address`
@@ -27,9 +33,6 @@ mixin memberForm(member = {})
             .input-group-position
               i.input-group-position__icon.fa.fa-fw(class=`fa-${social.toLowerCase()}`)
               input.input-group-position__input.field(type="text" name=`${social.toLowerCase()}Url` value=(member[`${social.toLowerCase()}Url`] || ''))
-        .mb2
-          label(for="photo") Photo
-          input.block.col-12.field(type="file" id="photo" name="photo" accept="image/gif, image/png, image/jpeg")
           //- the accept attr here does not disable people from messing with client side dev tools to rm the allowed filetypes, but we protect ourselves against this on the server controller with multerOptions. This accept is useful incase a user tries to upload a non-image like a pdf or psd!
           if member.photo
             img(src=`/uploads/${member.photo}`, alt=member.name width=200)

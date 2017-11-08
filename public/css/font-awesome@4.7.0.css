@@ -131,6 +131,18 @@
   content: '\f1be';
 }
 
+.fa-dribbble:before {
+  content: '\f17d';
+}
+
+.fa-linkedin:before {
+  content: '\f0e1';
+}
+
+.fa-linkedin-square:before {
+  content: '\f08c';
+}
+
 /*
  *
  * CUSTOM EDIT!
