@@ -143,6 +143,10 @@
   content: '\f08c';
 }
 
+.fa-pencil:before {
+  content: '\f040';
+}
+
 /*
  *
  * CUSTOM EDIT!
