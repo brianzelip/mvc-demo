@@ -1,6 +1,6 @@
 mixin memberForm(member = {})
 
-  form.p3.bg-white.shadow(action=`/staff/${(member._id) ? `${member._id}/edit` : `add`}` method="POST" enctype="multipart/form-data")
+  form.p3.bg-white.shadow(action=`/staff/${(member.slug) ? `${member.slug}/edit` : `add`}` method="POST" enctype="multipart/form-data")
     .flex.flex-column.sm-flex-row
       .col-12.sm-col-6.sm-mr3
         .mb2

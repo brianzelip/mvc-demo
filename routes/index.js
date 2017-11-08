@@ -12,9 +12,9 @@ router.post(
   catchErrors(memberController.resize),
   catchErrors(memberController.createMember)
 );
-router.get('/staff/:id/edit', catchErrors(memberController.editMember));
+router.get('/staff/:slug/edit', catchErrors(memberController.editMemberBySlug));
 router.post(
-  '/staff/:id/edit',
+  '/staff/:slug/edit',
   memberController.upload,
   catchErrors(memberController.resize),
   catchErrors(memberController.updateMember)
