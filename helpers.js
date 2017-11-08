@@ -20,7 +20,7 @@ exports.dump = obj => JSON.stringify(obj, null, 2);
 // exports.icon = name => fs.readFileSync(`./public/images/icons/${name}.svg`);
 
 // Some details about the site
-exports.siteName = `Staff Directory`;
+exports.siteName = `Directory`;
 
 //- - function colorDice() {
 //-     const classes = ['grab0', 'grab1', 'grab2'];
