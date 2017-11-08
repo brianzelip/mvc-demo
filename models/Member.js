@@ -67,22 +67,8 @@ const memberSchema = new mongoose.Schema(
   }
 );
 
-// memberSchema.pre('save', function(next) {
-// if (!this.isModified('name')) {
-//   next(); // skip it
-//   return; // stop this function from running
-//   // the above two lines could also be written as:
-//   // `return next();`.
-//   //
-//   // also, `isModified()` is a Mongoose method
-// }
-//   this.slug = slug(this.name);
-//   // TODO make this more resilient so slugs are unique
-//   next();
-// }); // needs to be a long-form function because we need `this`, so arrow func won't do
-
 memberSchema.pre('save', function(next) {
-  if (!this.isModified('nameFirst') || !this.isModified('nameLast')) {
+  if (!this.isModified('nameFirst') && !this.isModified('nameLast')) {
     next(); // skip it
     return; // stop this function from running
     // the above two lines could also be written as:
@@ -91,6 +77,16 @@ memberSchema.pre('save', function(next) {
     // also, `isModified()` is a Mongoose method
   }
   this.fullName = `${this.nameFirst} ${this.nameLast}`;
+  // TODO make this more resilient so slugs are unique
+  next();
+}); // needs to be a long-form function because we need `this`, so arrow func won't do
+
+memberSchema.pre('save', function(next) {
+  if (!this.isModified('nameFirst') && !this.isModified('nameLast')) {
+    next(); // skip it
+    return;
+  }
+  this.slug = slug(`${this.nameFirst} ${this.nameLast}`);
   // TODO make this more resilient so slugs are unique
   next();
 }); // needs to be a long-form function because we need `this`, so arrow func won't do

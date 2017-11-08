@@ -3,6 +3,7 @@ const Member = mongoose.model('Member');
 const multer = require('multer');
 const jimp = require('jimp');
 const uuid = require('uuid');
+const slug = require('slugs');
 
 const multerOptions = {
   storage: multer.memoryStorage(), // store file into memory instead of to disk, we will save the resized file to disk later
@@ -49,6 +50,7 @@ exports.updateMember = async (req, res) => {
   // 1. set the fullName since the update doesn't automatically
   // re-initiate the pre('save') from the model
   req.body.fullName = `${req.body.nameFirst} ${req.body.nameLast}`;
+  req.body.slug = slug(`${req.body.nameFirst} ${req.body.nameLast}`);
   // 2. find and update the member
   const member = await Member.findOneAndUpdate(
     { _id: req.params.id },
