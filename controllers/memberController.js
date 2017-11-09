@@ -83,7 +83,7 @@ exports.getMember = async (req, res) => {
   res.render('member', { title: `${member.fullName}`, member });
 };
 
-exports.upload = multer(multerOptions).single('photo');
+exports.upload = multer(multerOptions).single('photoFull');
 
 exports.resize = async (req, res, next) => {
   // 1. make sure a file to resize actually exists
@@ -91,14 +91,22 @@ exports.resize = async (req, res, next) => {
     next();
     return;
   }
-  const extension = req.file.mimetype.split('/')[1];
-  req.body.photo = `${uuid.v4()}.${extension}`;
-  // req.body.photo here because, we create the Store obj from the req.body as in the createStore controller above, so here we are attaching a new property called photo where we will pass the view the path to the photo to render!
 
-  // now we resize the photo
+  // set up the file names
+  const extension = req.file.mimetype.split('/')[1];
+  const uniqueName = uuid.v4();
+  req.body.photoFull = `${uniqueName}-full.${extension}`;
+  req.body.photoSquare = `${uniqueName}-sq.${extension}`;
+
+  // set up the photo
   const photo = await jimp.read(req.file.buffer);
+
+  // write the photo to disk, save as photo-full
+  await photo.write(`./public/uploads/${req.body.photoFull}`);
+
+  // resize photo for square dimensions and save as photo-square
   await photo.resize(800, 800);
-  await photo.write(`./public/uploads/${req.body.photo}`);
+  await photo.write(`./public/uploads/${req.body.photoSquare}`);
 
   // once we have written the photo to our file system, keep going!
   next();
