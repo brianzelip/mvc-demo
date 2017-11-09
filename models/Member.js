@@ -42,7 +42,8 @@ const memberSchema = new mongoose.Schema(
       type: String,
       trim: true
     },
-    photo: String,
+    photoFull: String,
+    photoSquare: String,
     slug: String,
     skills: [String],
     location: {
