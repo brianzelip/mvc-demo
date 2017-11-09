@@ -74,13 +74,10 @@ const gradients = [
   'linear-gradient(to left, #f09819, #edde5d);',
   'linear-gradient(to left, #e55d87, #5fc3e4);',
   'linear-gradient(to left, #7AA1D2, #DBD4B4, #CC95C0);',
-  'linear-gradient(to left, #3ca55c, #b5ac49);',
   'linear-gradient(to left, #348f50, #56b4d3);',
   'linear-gradient(to left, #da22ff, #9733ee);',
   'linear-gradient(to left, #02aab0, #00cdac);',
-  'linear-gradient(to left, #ede574, #e1f5c4);',
   'linear-gradient(to left, #d31027, #ea384d);',
-  'linear-gradient(to left, #16a085, #f4d03f);',
   'linear-gradient(to left, #77a1d3, #79cbca, #e684ae);',
   'linear-gradient(to left, #e65c00, #f9d423);',
   'linear-gradient(to left, #2193b0, #6dd5ed);',
@@ -112,7 +109,6 @@ const gradients = [
   'linear-gradient(to left, #e44d26, #f16529);',
   'linear-gradient(to left, #4ac29a, #bdfff3);',
   'linear-gradient(to left, #b2fefa, #0ed2f7);',
-  'linear-gradient(to left, #30e8bf, #ff8235);',
   'linear-gradient(to left, #d66d75, #e29587);',
   'linear-gradient(to left, #f7971e, #ffd200);',
   'linear-gradient(to left, #43c6ac, #f8ffae);',
@@ -124,9 +120,7 @@ const gradients = [
   'linear-gradient(to left, #f4c4f3, #fc67fa);',
   'linear-gradient(to left, #00c3ff, #ffff1c);',
   'linear-gradient(to left, #ff7e5f, #feb47b);',
-  'linear-gradient(to left, #fffc00, #ffffff);',
-  'linear-gradient(to left, #ef32d9, #89fffd);',
-  'linear-gradient(to left, #a80077, #66ff00);'
+  'linear-gradient(to left, #ef32d9, #89fffd);'
 ];
 
 ranNum = (min, max) => Math.floor(Math.random() * (max - min)) + min;
