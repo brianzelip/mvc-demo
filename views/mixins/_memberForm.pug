@@ -16,10 +16,10 @@ mixin memberForm(member = {})
           label(for="bio") Bio
           textarea.block.col-12.field(name="bio")= member.bio || ''
         .mb2
-          label(for="photo") Photo
-          input.block.col-12.field(type="file" id="photo" name="photo" accept="image/gif, image/png, image/jpeg")
-          if member.photo
-            img.mt1(src=`/uploads/${member.photo}`, alt=member.name width=150)
+          label(for="photoFull") Photo
+          input.block.col-12.field(type="file" id="photoFull" name="photoFull" accept="image/gif, image/png, image/jpeg")
+          if member.photoFull
+            img.mt1(src=`/uploads/${member.photoFull}`, alt=member.name width=150)
       .col-12.sm-col-6
         .mb2
           label(for="url") Website address
