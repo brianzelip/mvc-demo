@@ -143,3 +143,10 @@ re: skills array:
   - relationships
   - instruction
   - teaching
+
+
+** idea for member page, adapt design from http://designsystems.nyc/
+TODO for this design:
+  - resize photo if too big, then save as is for large rendereing of full image on member page
+    - then make a new controller that resizes the photo if needed and saves with a unique name, then passes the photo off to another resize 
+    - then run the existing resize function that squares the photo up for circle rendering
