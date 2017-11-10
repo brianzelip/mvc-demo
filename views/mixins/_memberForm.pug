@@ -22,8 +22,8 @@ mixin memberForm(member = {})
             img.mt1(src=`/uploads/${member.photoFull}`, alt=member.name width=150)
       .col-12.sm-col-6
         .mb2
-          label(for="url") Website address
-          input.block.col-12.field(type="text" name="url" value=(member.url || ''))
+          label(for="personalUrl") Website address
+          input.block.col-12.field(type="text" id="personalUrl" name="personalUrl" value=(member.personalUrl || ''))
         - const socials = ['GitHub', 'Dribbble', 'Twitter', 'LinkedIn']
         each social in socials
           .mb2
