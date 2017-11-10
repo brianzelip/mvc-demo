@@ -147,6 +147,10 @@
   content: '\f040';
 }
 
+.fa-envelope-o:before {
+  content: '\f003';
+}
+
 /*
  *
  * CUSTOM EDIT!
