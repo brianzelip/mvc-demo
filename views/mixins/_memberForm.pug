@@ -34,6 +34,6 @@ mixin memberForm(member = {})
             //-   input.input-group-flex__input(type="text")
             .input-group-position
               i.input-group-position__icon.fa.fa-fw(class=`fa-${social.toLowerCase()}`)
-              input.input-group-position__input.field(type="text" name=`${social.toLowerCase()}Url` value=(member[`${social.toLowerCase()}Url`] || ''))
+              input.input-group-position__input.field(type="text" id=`${social.toLowerCase()}Url` name=`${social.toLowerCase()}Url` value=(member[`${social.toLowerCase()}Url`] || ''))
           //- the accept attr here does not disable people from messing with client side dev tools to rm the allowed filetypes, but we protect ourselves against this on the server controller with multerOptions. This accept is useful incase a user tries to upload a non-image like a pdf or psd!
     input.btn.btn-primary.col-12.mt2(type="submit" value="Save →")
