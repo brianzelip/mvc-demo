@@ -2,15 +2,22 @@ extends layout
 
 block content
   section.mt4.mb3
-    .flex.flex-wrap
-      .col-12.sm-col-6
-        img(src=`/uploads/${member.photoFull}` alt=`${member.fullName}` title=`${member.fullName}` style="margin-bottom: -6px;")
-      .col-12.sm-col-6.bg-black.white
-        .px3
-          h1= member.fullName
-          p= member.title
-          p= member.bio
-          a(href=`/staff/${member.slug}/edit`) Edit
+    .container
+      .flex.flex-wrap.shadow
+        .col-12.sm-col-6.profile__image(style=`background-image: url(/uploads/${member.photoFull});`)
+        .col-12.sm-col-6.bg-black.white
+          .px3
+            h1.fw600= member.nameFull
+            p= member.title
+            if member.bio
+              p= member.bio
+            - const urlTypes = ['personal', 'GitHub', 'Dribbble', 'Twitter', 'LinkedIn'];
+            - const urls = urlTypes.filter(type => member[`${type.toLowerCase()}Url`].length > 0)
+            ul.list-reset.flex
+              for url in urls
+                li
+                  a.btn(href=`member[${url.toLowerCase()}Url]`)= url
+            a(href=`/staff/${member.slug}/edit`) Edit
 
     //- .container
     //-   h1= title
