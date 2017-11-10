@@ -15,7 +15,7 @@ const memberSchema = new mongoose.Schema(
       trim: true,
       required: 'You must enter a last name!'
     },
-    fullName: String,
+    nameFull: String,
     url: {
       type: String,
       trim: true
@@ -77,7 +77,7 @@ memberSchema.pre('save', function(next) {
     //
     // also, `isModified()` is a Mongoose method
   }
-  this.fullName = `${this.nameFirst} ${this.nameLast}`;
+  this.nameFull = `${this.nameFirst} ${this.nameLast}`;
   // TODO make this more resilient so slugs are unique
   next();
 }); // needs to be a long-form function because we need `this`, so arrow func won't do
