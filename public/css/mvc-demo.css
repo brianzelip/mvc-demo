@@ -602,3 +602,11 @@ input[type='text'].input-group-position__input {
     #ff0000 100%
   );
 } */
+
+.profile__image {
+  display: block;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  min-height: 400px;
+}
