@@ -16,16 +16,16 @@ const memberSchema = new mongoose.Schema(
       required: 'You must enter a last name!'
     },
     nameFull: String,
-    url: {
-      type: String,
-      trim: true
-    },
     title: {
       type: String,
       trim: true,
       required: 'You must enter a title!'
     },
     bio: String,
+    personalUrl: {
+      type: String,
+      trim: true
+    },
     twitterUrl: {
       type: String,
       trim: true
