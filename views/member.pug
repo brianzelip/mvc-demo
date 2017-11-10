@@ -11,12 +11,18 @@ block content
             p= member.title
             if member.bio
               p= member.bio
-            - const urlTypes = ['personal', 'GitHub', 'Dribbble', 'Twitter', 'LinkedIn'];
+            if member.email
+              a.flex.flex-center(href=`mailto:${member.email}`)
+                i.fa.fa-envelope-o(aria-hidden="true") 
+                span.ml1 Email
+            - const urlTypes = ['GitHub', 'Dribbble', 'Twitter', 'LinkedIn'];
             - const urls = urlTypes.filter(type => member[`${type.toLowerCase()}Url`].length > 0)
             ul.list-reset.flex
               for url in urls
                 li
-                  a.btn(href=`member[${url.toLowerCase()}Url]`)= url
+                  a.flex.flex-center(href=`member[${url.toLowerCase()}Url]` style="border: 1px solid #eee; border-radius: 8px;padding: .1rem .3rem")
+                    i.fa(aria-hidden="true" class=`fa-${url.toLowerCase()}`)
+                    span.ml1= url
             a(href=`/staff/${member.slug}/edit`) Edit
 
     //- .container
