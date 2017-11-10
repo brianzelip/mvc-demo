@@ -1,18 +1,28 @@
 extends layout
 
 block content
-  section.mt3.mb3
-    .container
-      h1= title
-        i.ml2.h2.fa.fa-pencil(aria-hidden="true")
-        figure.mx0
-          img.block.mx-auto.col-12.shadow(src=`/uploads/${member.photoFull}`, alt=`${member.fullName}`, title=`${member.fullName}`)
-        p.mb0.h2.center.dark-blue #{member.fullName}
-        p.h4.center.dark-blue #{member.bio}
-        ul.list-reset.mb0.pt2.flex.flex-wrap
-          li.flex.flex-center.mr1.mb1.p1.h6.info python
-          li.flex.flex-center.mr1.mb1.p1.h6.info javascript
-          li.flex.flex-center.mr1.mb1.p1.h6.info security
-          li.flex.flex-center.mr1.mb1.p1.h6.info design
-          li.flex.flex-center.mr1.mb1.p1.h6.info people
+  section.mt4.mb3
+    .flex.flex-wrap
+      .col-12.sm-col-6
+        img(src=`/uploads/${member.photoFull}` alt=`${member.fullName}` title=`${member.fullName}` style="margin-bottom: -6px;")
+      .col-12.sm-col-6.bg-black.white
+        .px3
+          h1= member.fullName
+          p= member.title
+          p= member.bio
+          a(href=`/staff/${member.slug}/edit`) Edit
+
+    //- .container
+    //-   h1= title
+    //-     i.ml2.h2.fa.fa-pencil(aria-hidden="true")
+    //-     figure.mx0
+    //-       img.block.mx-auto.col-12.shadow(src=`/uploads/${member.photoFull}`, alt=`${member.fullName}`, title=`${member.fullName}`)
+    //-     p.mb0.h2.center.dark-blue #{member.fullName}
+    //-     p.h4.center.dark-blue #{member.bio}
+    //-     ul.list-reset.mb0.pt2.flex.flex-wrap
+    //-       li.flex.flex-center.mr1.mb1.p1.h6.info python
+    //-       li.flex.flex-center.mr1.mb1.p1.h6.info javascript
+    //-       li.flex.flex-center.mr1.mb1.p1.h6.info security
+    //-       li.flex.flex-center.mr1.mb1.p1.h6.info design
+    //-       li.flex.flex-center.mr1.mb1.p1.h6.info people
 
