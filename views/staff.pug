@@ -13,8 +13,8 @@ block content
             a.black.hover-no-decoration.bg-white.shadow.colorbar(href=`/staff/${member.slug}` class=`colorbar--${index}`)
               .p2.col-12
                 figure.mx0
-                  img.block.mx-auto.col-7.circle.shadow(src=`/uploads/${member.photoSquare}`, alt=`${member.fullName}`, title=`${member.fullName}`)
-                p.mb0.h2.center.dark-blue #{member.fullName}
+                  img.block.mx-auto.col-7.circle.shadow(src=`/uploads/${member.photoSquare}`, alt=`${member.nameFull}`, title=`${member.nameFull}`)
+                p.mb0.h2.center.dark-blue #{member.nameFull}
                 p.h4.center.dark-blue #{member.bio}
                 ul.list-reset.mb0.pt2.flex.flex-wrap
                   li.flex.flex-center.mr1.mb1.p1.h6.info python
