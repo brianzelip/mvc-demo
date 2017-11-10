@@ -38,30 +38,14 @@ const memberSchema = new mongoose.Schema(
       type: String,
       trim: true
     },
-    dribbleUrl: {
+    dribbbleUrl: {
       type: String,
       trim: true
     },
+    skills: [String],
     photoFull: String,
     photoSquare: String,
-    slug: String,
-    skills: [String],
-    location: {
-      type: {
-        type: String,
-        default: 'Point'
-      },
-      coordinates: [
-        {
-          type: Number //,
-          //required: 'You must supply coordinates!'
-        }
-      ],
-      address: {
-        type: String //,
-        //required: 'You must supply an address to supply the coordinates!'
-      }
-    }
+    slug: String
   },
   {
     timestamps: true
