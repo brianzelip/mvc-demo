@@ -43,19 +43,19 @@ exports.editMember = async (req, res) => {
   // 1. Find the member given the slug parameter of the url (ie: `req.params.slug`)
   const member = await Member.findOne({ slug: req.params.slug });
   // 2. Render out the edit form so the user can update the member data
-  res.render('editMember', { title: `Edit ${member.fullName}`, member });
+  res.render('editMember', { title: `Edit ${member.nameFull}`, member });
 };
 exports.editMemberBySlug = async (req, res) => {
   // 1. Find the member given the slug parameter of the url (ie: `req.params.slug`)
   const member = await Member.findOne({ slug: req.params.slug });
   // 2. Render out the edit form so the user can update the member data
-  res.render('editMember', { title: `Edit ${member.fullName}`, member });
+  res.render('editMember', { title: `Edit ${member.nameFull}`, member });
 };
 
 exports.updateMember = async (req, res) => {
-  // 1. set the fullName since the update doesn't automatically
+  // 1. set the nameFull since the update doesn't automatically
   // re-initiate the pre('save') from the model
-  req.body.fullName = `${req.body.nameFirst} ${req.body.nameLast}`;
+  req.body.nameFull = `${req.body.nameFirst} ${req.body.nameLast}`;
   req.body.slug = slug(`${req.body.nameFirst} ${req.body.nameLast}`);
   // 2. find and update the member
   const member = await Member.findOneAndUpdate(
@@ -73,14 +73,14 @@ exports.updateMember = async (req, res) => {
   // 3. Redirect them to the member and flash them it worked
   req.flash(
     'success',
-    `Successfully updated <strong>${member.fullName}</strong>! <a href="/staff/${member.slug}">Go to ${member.fullName} →</a>`
+    `Successfully updated <strong>${member.nameFull}</strong>! <a href="/staff/${member.slug}">Go to ${member.nameFull} →</a>`
   );
   res.redirect(`/staff/${member.slug}/edit`);
 };
 
 exports.getMember = async (req, res) => {
   const member = await Member.findOne({ slug: req.params.slug });
-  res.render('member', { title: `${member.fullName}`, member });
+  res.render('member', { title: `${member.nameFull}`, member });
 };
 
 exports.upload = multer(multerOptions).single('photoFull');
