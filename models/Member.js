@@ -22,7 +22,7 @@ const memberSchema = new mongoose.Schema(
       required: 'You must enter a title!'
     },
     bio: String,
-    personalUrl: {
+    email: {
       type: String,
       trim: true
     },
