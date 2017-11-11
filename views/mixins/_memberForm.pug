@@ -15,11 +15,15 @@ mixin memberForm(member = {})
         .mb2
           label(for="bio") Bio
           textarea.block.col-12.field(name="bio")= member.bio || ''
+        - const skills = ['admin', 'animation', 'back end', 'content', 'css', 'design', 'front end', 'illustration', 'instruction', 'javascript', 'python', 'ruby', 'rust', 'security', 'typography', 'ui/ux', 'visualization']
         .mb2
-          label(for="photoFull") Photo
-          input.block.col-12.field(type="file" id="photoFull" name="photoFull" accept="image/gif, image/png, image/jpeg")
-          if member.photoFull
-            img.mt1(src=`/uploads/${member.photoFull}`, alt=member.name width=150)
+          label(for="skills") Skills
+          ul.m0.list-reset.flex.flex-wrap
+            each skill in skills
+              li.skill
+                input(type="checkbox" id=skill value=skill name="skills")
+                label(for=skill)= skill
+
       .col-12.sm-col-6
         .mb2
           label(for="email") Email address
@@ -35,5 +39,10 @@ mixin memberForm(member = {})
             .input-group-position
               i.input-group-position__icon.fa.fa-fw(class=`fa-${social.toLowerCase()}`)
               input.input-group-position__input.field(type="text" id=`${social.toLowerCase()}Url` name=`${social.toLowerCase()}Url` value=(member[`${social.toLowerCase()}Url`] || ''))
+        .mb2
+          label(for="photoFull") Photo
+          input.block.col-12.field(type="file" id="photoFull" name="photoFull" accept="image/gif, image/png, image/jpeg")
+          if member.photoFull
+            img.mt1(src=`/uploads/${member.photoFull}`, alt=member.name width=150)
           //- the accept attr here does not disable people from messing with client side dev tools to rm the allowed filetypes, but we protect ourselves against this on the server controller with multerOptions. This accept is useful incase a user tries to upload a non-image like a pdf or psd!
     input.btn.btn-primary.col-12.mt2(type="submit" value="Save →")
