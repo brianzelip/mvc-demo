@@ -351,6 +351,9 @@ input[type='text'].input-group-position__input {
 .pt2 {
   padding-top: 1rem;
 }
+.pb1 {
+  padding-bottom: 0.5rem;
+}
 
 .skew20 {
   transform: skew(20deg);
