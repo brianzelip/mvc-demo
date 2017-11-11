@@ -5,25 +5,32 @@ block content
     .container
       .flex.flex-wrap.shadow
         .col-12.sm-col-6.profile__image(style=`background-image: url(/uploads/${member.photoFull});`)
-        .col-12.sm-col-6.bg-black.white
-          .px3
-            h1.fw600= member.nameFull
-            p= member.title
-            if member.bio
-              p= member.bio
+        .col-12.sm-col-6.flex.bg-white
+          .p3.flex.flex-column.justify-between
+            div
+              h1.m0.fw600= member.nameFull
+              p.italic= member.title
+              ul.mt0.list-reset.flex.flex-wrap
+                li.flex.flex-center.mr1.mb1.p1.h6.info python
+                li.flex.flex-center.mr1.mb1.p1.h6.info javascript
+                li.flex.flex-center.mr1.mb1.p1.h6.info security
+                li.flex.flex-center.mr1.mb1.p1.h6.info design
+                li.flex.flex-center.mr1.mb1.p1.h6.info people
+              if member.bio
+                p= member.bio
             - const urlTypes = ['GitHub', 'Dribbble', 'Twitter', 'LinkedIn'];
             - const urls = urlTypes.filter(type => member[`${type.toLowerCase()}Url`].length > 0)
             if member.email || urls.length > 0
-              ul.list-reset.flex
+              ul.mb0.list-reset.flex
                 if member.email
-                  li
+                  li.mr2.flex
                     a.flex.flex-center.hover-no-decoration(href=`mailto:${member.email}`)
-                      i.h1.mr2.fa.fa-envelope-o(aria-hidden="true")
+                      i.fa.fa-envelope-o(style="font-size: 1.4rem;" aria-hidden="true")
                 for url in urls
-                  li
+                  li.mr2
                     a.flex.flex-center.hover-no-decoration(href=`${member[`${url.toLowerCase()}Url`]}`)
-                      i.h1.mr2.fa(aria-hidden="true" class=`fa-${url.toLowerCase()}`)
-            a(href=`/staff/${member.slug}/edit`) Edit
+                      i.h2.fa(aria-hidden="true" class=`fa-${url.toLowerCase()}`)
+            //- a(href=`/staff/${member.slug}/edit`) Edit
 
     //- .container
     //-   h1= title
