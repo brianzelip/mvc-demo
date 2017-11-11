@@ -266,12 +266,14 @@ input[type='text'].input-group-position__input {
 .align-content-stretch {
   align-content: stretch;
 }
-
 .self-stretch {
   align-self: stretch;
 }
 .justify-around {
   justify-content: space-around;
+}
+.justify-between {
+  justify-content: space-between;
 }
 
 .hover-bg:hover {
