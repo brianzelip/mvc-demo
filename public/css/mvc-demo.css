@@ -431,7 +431,8 @@ input[type='text'].input-group-position__input {
 
 /* form skill inputs */
 .skill {
-  margin: 0.25rem;
+  margin-right: 0.5rem;
+  margin-bottom: 0.5rem;
   font-size: 0.875rem;
   display: flex;
   justify-content: center;
