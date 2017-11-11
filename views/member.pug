@@ -8,7 +8,10 @@ block content
         .col-12.sm-col-6.flex.bg-white
           .p3.flex.flex-column.justify-between
             div
-              h1.m0.fw600= member.nameFull
+              .flex.flex-center
+                h1.m0.inline-block.fw600= member.nameFull
+                a.ml2(href=`/staff/${member.slug}/edit` title="edit member")
+                  i.fa.fa-pencil
               p.italic= member.title
               if member.skills.length > 0
                 ul.mt0.list-reset.flex.flex-wrap
