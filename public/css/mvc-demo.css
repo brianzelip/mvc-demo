@@ -131,6 +131,18 @@ h6 {
   font-weight: 800;
 }
 
+@media (min-width: 40em) {
+  .sm-fw700 {
+    font-weight: 700;
+  }
+  .sm-fw800 {
+    font-weight: 800;
+  }
+  .sm-h4 {
+    font-size: 1rem;
+  }
+}
+
 .hover-no-decoration:hover {
   text-decoration: none;
 }
@@ -242,8 +254,18 @@ input[type='text'].input-group-position__input {
 }
 
 @media (min-width: 40em) {
+  .sm-mr2 {
+    margin-right: 1rem;
+  }
   .sm-mr3 {
     margin-right: 2rem;
+  }
+  .sm-mt4 {
+    margin-top: 4rem;
+  }
+  .sm-px2 {
+    padding-right: 1rem;
+    padding-left: 1rem;
   }
 }
 
