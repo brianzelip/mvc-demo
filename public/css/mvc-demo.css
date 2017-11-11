@@ -428,3 +428,27 @@ input[type='text'].input-group-position__input {
   background-position: center;
   min-height: 400px;
 }
+
+/* form skill inputs */
+.skill {
+  margin: 0.25rem;
+  font-size: 0.875rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.skill input {
+  width: auto;
+  right: -0.3rem;
+  margin-right: -1rem;
+  position: relative;
+  z-index: 2;
+}
+.skill input + label {
+  background-color: var(--light-gray);
+  padding: 0.3rem 0.5rem 0.3rem 1.75rem;
+}
+.skill input:checked + label {
+  background-color: var(--bg-color-info);
+  color: var(--color-info);
+}
