@@ -15,11 +15,11 @@ html(lang="en")
     block header
       header.px2.bg-black
         nav.container.flex.flex-center
-          h1.mt0.mr2.mb0.py2.fw800
+          h1.mt0.mr1.sm-mr2.mb0.py2.fw600.sm-fw800
             a.white.hover-no-decoration(href="/")= h.siteName
           div.self-stretch.flex
-            a.flex.flex-center.px2.fw700.white.hover-bg-dots.hover-no-decoration(href="/staff") All staff
-            a.flex.flex-center.px2.fw700.white.hover-bg-dots.hover-no-decoration(href="/staff/add") Add member
+            a.flex.flex-center.px1.sm-px2.h5.sm-h4.fw400.sm-fw700.center.white.hover-bg-dots.hover-no-decoration(href="/staff") All staff
+            a.flex.flex-center.px1.sm-px2.h5.sm-h4.fw400.sm-fw700.center.white.hover-bg-dots.hover-no-decoration(href="/staff/add") Add member
         
     block messages
       +flashes(member)
