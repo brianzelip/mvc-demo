@@ -59,7 +59,7 @@ input[type='url'],
   --border-color-error: color(var(--bg-color-error) shade(25%));
 
   --color-blue: rgb(0, 122, 223);
-  --state-info: var(--color-green);
+  --state-info: var(--color-blue);
   --bg-color-info: color(var(--state-info) tint(75%));
   --color-info: color(var(--state-info) lightness(25%));
   --border-color-info: color(var(--bg-color-info) shade(25%));
