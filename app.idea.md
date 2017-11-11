@@ -114,6 +114,10 @@ TODO:
 - add skills tags array
 - ~~create profile cards for `/staff`~~
 - ~~create profile pages for `/staff/:slug`~~
+- adjust content block top and bottom margin on staff form and staff view
+- stack cards on staff view on mobile
+- add skills input to form
+- dynamically render skills on member profile
 
 re: skills array:
 - can have a set of hard-coded options that a user can pick up to 5
