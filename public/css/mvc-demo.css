@@ -263,6 +263,10 @@ input[type='text'].input-group-position__input {
   .sm-mt4 {
     margin-top: 4rem;
   }
+  .sm-px0 {
+    padding-right: 0;
+    padding-left: 0;
+  }
   .sm-px2 {
     padding-right: 1rem;
     padding-left: 1rem;
