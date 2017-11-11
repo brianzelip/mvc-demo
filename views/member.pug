@@ -10,12 +10,10 @@ block content
             div
               h1.m0.fw600= member.nameFull
               p.italic= member.title
-              ul.mt0.list-reset.flex.flex-wrap
-                li.flex.flex-center.mr1.mb1.p1.h6.info python
-                li.flex.flex-center.mr1.mb1.p1.h6.info javascript
-                li.flex.flex-center.mr1.mb1.p1.h6.info security
-                li.flex.flex-center.mr1.mb1.p1.h6.info design
-                li.flex.flex-center.mr1.mb1.p1.h6.info people
+              if member.skills.length > 0
+                ul.mt0.list-reset.flex.flex-wrap
+                  each skill in member.skills
+                    li.mr1.mb1.flex.flex-center.h5.info(style="padding: .3rem .5rem")= skill
               if member.bio
                 p= member.bio
             - const urlTypes = ['GitHub', 'Dribbble', 'Twitter', 'LinkedIn'];
