@@ -17,12 +17,12 @@ block content
               ul.list-reset.flex
                 if member.email
                   li
-                    a.flex.flex-center(href=`mailto:${member.email}`)
-                      i.fa.fa-envelope-o(aria-hidden="true")
+                    a.flex.flex-center.hover-no-decoration(href=`mailto:${member.email}`)
+                      i.h1.mr2.fa.fa-envelope-o(aria-hidden="true")
                 for url in urls
                   li
-                    a.flex.flex-center(href=`member[${url.toLowerCase()}Url]`)
-                      i.fa(aria-hidden="true" class=`fa-${url.toLowerCase()}`)
+                    a.flex.flex-center.hover-no-decoration(href=`${member[`${url.toLowerCase()}Url`]}`)
+                      i.h1.mr2.fa(aria-hidden="true" class=`fa-${url.toLowerCase()}`)
             a(href=`/staff/${member.slug}/edit`) Edit
 
     //- .container
