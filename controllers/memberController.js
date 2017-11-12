@@ -73,7 +73,7 @@ exports.updateMember = async (req, res) => {
   // 3. Redirect them to the member and flash them it worked
   req.flash(
     'success',
-    `Successfully updated <strong>${member.nameFull}</strong>! <a href="/staff/${member.slug}">Go to ${member.nameFull} →</a>`
+    `Successfully updated <strong>${member.nameFull}</strong>! <a href="/staff/${member.slug}">View page →</a>`
   );
   res.redirect(`/staff/${member.slug}/edit`);
 };
