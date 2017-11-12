@@ -16,12 +16,13 @@ mixin memberForm(member = {})
           label(for="bio") Bio
           textarea.block.col-12.field(name="bio")= member.bio || ''
         - const skills = ['admin', 'animation', 'back end', 'content', 'css', 'design', 'front end', 'illustration', 'instruction', 'javascript', 'python', 'ruby', 'rust', 'security', 'typography', 'ui/ux', 'visualization']
+        - const skillSet = member.skills || []
         .mb2
           label(for="skills") Skills
           ul.m0.list-reset.flex.flex-wrap
             each skill in skills
               li.skill
-                input(type="checkbox" id=skill value=skill name="skills")
+                input(type="checkbox" id=skill value=skill name="skills" checked=(skillSet.includes(skill)))
                 label(for=skill)= skill
 
       .col-12.sm-col-6
