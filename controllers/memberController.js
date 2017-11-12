@@ -31,6 +31,10 @@ exports.createMember = async (req, res) => {
   const member = new Member(req.body);
   await member.save();
   // req.flash('success', 'Member saved successfully!');
+  req.flash(
+    'success',
+    `Successfully created <strong>${member.nameFull}</strong>! <a href="/staff/${member.slug}">View page →</a>`
+  );
   res.redirect('/staff/add');
 };
 
