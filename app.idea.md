@@ -110,15 +110,14 @@ pass around `allStaff` object when passing around all staff.
 TODO:
 - ~~add slug()~~
 - ~~add photo upload~~
-- add map?
-- add skills tags array
 - ~~create profile cards for `/staff`~~
 - ~~create profile pages for `/staff/:slug`~~
-- adjust content block top and bottom margin on staff form and staff view
-- stack cards on staff view on mobile
 - ~~add skills input to form~~
 - ~~dynamically render skills on member profile~~
 - ~~dynamically render skills on staff view~~
+- adjust content block top and bottom margin on staff form and staff view
+- stack cards on staff view on mobile
+- show flash on add new member
 
 re: skills array:
 - can have a set of hard-coded options that a user can pick up to 5
