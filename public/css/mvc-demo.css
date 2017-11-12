@@ -260,6 +260,9 @@ input[type='text'].input-group-position__input {
   .sm-mr3 {
     margin-right: 2rem;
   }
+  .sm-mt3 {
+    margin-top: 2rem;
+  }
   .sm-mt4 {
     margin-top: 4rem;
   }
