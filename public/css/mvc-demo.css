@@ -360,6 +360,12 @@ input[type='text'].input-group-position__input {
 .pb1 {
   padding-bottom: 0.5rem;
 }
+@media (min-width: 64em) {
+  .lg-px3 {
+    padding-right: 2rem;
+    padding-left: 2rem;
+  }
+}
 
 .skew20 {
   transform: skew(20deg);
