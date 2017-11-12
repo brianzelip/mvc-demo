@@ -15,8 +15,7 @@ block content
                 figure.mx0
                   img.block.mx-auto.col-7.circle.shadow(src=`/uploads/${member.photoSquare}`, alt=`${member.nameFull}`, title=`${member.nameFull}`)
                 p.mb0.h2.center.dark-blue= member.nameFull
-                if member.bio
-                  p.h4.dark-blue= member.bio
+                p.center.dark-blue= member.title
                 if member.skills.length > 0
                   ul.mt0.list-reset.flex.flex-wrap
                     each skill in member.skills
