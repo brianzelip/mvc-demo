@@ -115,7 +115,7 @@ TODO:
 - ~~add skills input to form~~
 - ~~dynamically render skills on member profile~~
 - ~~dynamically render skills on staff view~~
-- adjust content block top and bottom margin on staff form and staff view
+- ~~adjust content block top and bottom margin on staff form and staff view~~
 - stack cards on staff view on mobile
 - show flash on add new member
 
