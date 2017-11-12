@@ -118,7 +118,7 @@ TODO:
 - ~~adjust content block top and bottom margin on staff form and staff view~~
 - ~~stack cards on staff view on mobile~~
 - ~~show flash on add new member~~
-- center skills on staff view cards
+- ~~center skills on staff view cards~~
 
 re: skills array:
 - can have a set of hard-coded options that a user can pick up to 5
