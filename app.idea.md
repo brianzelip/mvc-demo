@@ -117,7 +117,7 @@ TODO:
 - ~~dynamically render skills on staff view~~
 - ~~adjust content block top and bottom margin on staff form and staff view~~
 - ~~stack cards on staff view on mobile~~
-- show flash on add new member
+- ~~show flash on add new member~~
 - center skills on staff view cards
 
 re: skills array:
