@@ -1,22 +1,21 @@
 {
   "name": "mvc-demo",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Demonstration of a JavaScript Model-View-Controller project.",
   "main": "start.js",
   "scripts": {
     "test": "nyc ava --verbose",
     "watch": "nodemon ./start.js --ignore public/",
-    "css": "postcss -u postcss-custom-properties postcss-color-function postcss-import autoprefixer cssnano -d public/dist/ public/css/mvc-demo.css --no-map --watch",
-    "start": "concurrently \"npm run watch\" \"npm run css\" --names \"💻,🛠\" --prefix name"
+    "css":
+      "postcss -u postcss-custom-properties postcss-color-function postcss-import autoprefixer cssnano -d public/dist/ public/css/mvc-demo.css --no-map --watch",
+    "start":
+      "concurrently \"npm run watch\" \"npm run css\" --names \"💻,🛠\" --prefix name"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/brianzelip/mvc-demo.git"
   },
-  "keywords": [
-    "mvc",
-    "jrWebDev"
-  ],
+  "keywords": ["mvc", "jrWebDev"],
   "author": "Brian Zelip, @bzelip",
   "license": "MIT",
   "bugs": {
