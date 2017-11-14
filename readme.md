@@ -8,7 +8,7 @@ The app is a "staff directory" app that lets a user:
 - view all staff
 - view an individual staff member profile
 
-Created for the [Jr Web Dev meetup](https://www.meetup.com/jrWebDev/). See the [presentation slides](http://zelip.me/talks/node-mvc/).
+Created for the [Jr Web Dev meetup](https://www.meetup.com/jrWebDev/). See the accompanying [presentation slides](http://zelip.me/talks/node-mvc/).
 
 Shout out to Wes Bos's [Learn Node](https://learnnode.com) course.
 
