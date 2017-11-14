@@ -1,6 +1,6 @@
 {
   "name": "mvc-demo",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Demonstration of a JavaScript Model-View-Controller project.",
   "main": "start.js",
   "scripts": {
