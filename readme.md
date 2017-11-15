@@ -10,7 +10,7 @@ The app is a "staff directory" app that lets a user:
 
 Created for the [Jr Web Dev meetup](https://www.meetup.com/jrWebDev/). See the accompanying [presentation slides](http://zelip.me/talks/node-mvc/).
 
-Shout out to Wes Bos's [Learn Node](https://learnnode.com) course.
+Shout out to Wes Bos's [Learn Node](https://learnnode.com) course and [https://www.grabient.com/](Grabient) (a cool CSS gradient generator)!
 
 ## To run this app
 *Requires node v7.6+ for use of `async/await`.*
