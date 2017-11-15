@@ -22,6 +22,6 @@ Shout out to Wes Bos's [Learn Node](https://learnnode.com) course.
 
 ## Some obvious shortcomings of this app
 - there are no security checks in place to eliminate any funny business with javascript form field insertions
-- the model function that creates member url slugs isn't robust enough to ensure all slugs are unique, even if two or more members share the same name
+- the model function that creates member url slugs isn't robust enough to ensure all slugs are unique (in case two or more members share the same name)
 - there isn't any user login functionality, so the ability to edit any member's profile is available to all users
 - the photo resizing has the hardcoded assumption that all uploaded images will be larger than 800px wide to begin with
