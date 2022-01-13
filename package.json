@@ -40,7 +40,7 @@
   "devDependencies": {
     "autoprefixer": "^7.1.6",
     "ava": "^0.23.0",
-    "axios": "^0.21.1",
+    "axios": "^0.21.2",
     "cheerio": "^1.0.0-rc.2",
     "concurrently": "^3.5.0",
     "cssnano": "^3.10.0",
