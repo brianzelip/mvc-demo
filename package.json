@@ -46,7 +46,7 @@
     "cssnano": "^3.10.0",
     "nodemon": "^1.12.1",
     "nyc": "^11.2.1",
-    "postcss": "^6.0.13",
+    "postcss": "^8.2.13",
     "postcss-cli": "^4.1.1",
     "postcss-color-function": "^4.0.1",
     "postcss-custom-properties": "^6.2.0",
